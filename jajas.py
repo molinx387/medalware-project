@@ -39,8 +39,6 @@ st.bar_chart(data=df, x='COUNTRY', y='SIZE', width=1000, height=250, use_contain
 st.line_chart(data=df, x='TAGS', y='SIZE', width=100, height=500, use_container_width=True)
 #   st.area_chart(data=df, x='TAGS', y='SIZE', width=5000, height=5000, use_container_width=True)
 
-
-
 fig1, ax1 = plt.subplots()
 ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
