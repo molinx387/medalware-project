@@ -1,4 +1,7 @@
 FIRST SEEN,FILE TYPE,COUNTRY,TAGS,SIZE,SIGNATURE
+2023-03-21 16:32:05,exe,US,['exe'],184320,
+2023-03-21 16:31:37,exe,,['exe'],380800,
+2023-03-21 16:30:50,js,CA,['js'],4935488,
 2023-03-21 16:27:17,exe,US,['exe'],46080,
 2023-03-21 16:26:08,exe,,"['exe', 'Formbook']",680960,Formbook
 2023-03-21 16:26:06,zip,,"['Formbook', 'zip']",345808,Formbook
@@ -96,6 +99,3 @@ FIRST SEEN,FILE TYPE,COUNTRY,TAGS,SIZE,SIGNATURE
 2023-03-21 11:18:55,exe,,"['32', 'AgentTesla', 'exe', 'trojan']",1065472,AgentTesla
 2023-03-21 11:18:48,exe,,"['32', 'exe', 'GuLoader', 'trojan']",570442,GuLoader
 2023-03-21 11:18:33,exe,,"['32', 'exe', 'SnakeKeylogger', 'trojan']",782848,SnakeKeylogger
-2023-03-21 11:18:23,exe,,"['32', 'exe', 'SnakeKeylogger']",761856,SnakeKeylogger
-2023-03-21 11:04:39,dll,IT,"['dll', 'gozi', 'ITA', 'unpacked', 'ursnif']",53248,Gozi
-2023-03-21 11:04:19,dll,IT,"['2ndstage', 'dll', 'gozi', 'ITA', 'ursnif']",39936,Gozi

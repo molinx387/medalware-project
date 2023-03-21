@@ -32,7 +32,7 @@ with open('detections.csv','w',encoding='UTF8', newline='') as f:
     writter.writerow(csvheader)
     writter.writerows(topics_malware) 
 
-df= pd.read_csv('MEDALWARE-PROJECT/detections.csv')
+df= pd.read_csv('detections.csv')
 st.dataframe(df)
 st.header(' 📈 Historic Data Flow ')
 st.bar_chart(data=df, x='COUNTRY', y='SIZE', width=1000, height=250, use_container_width=False)
