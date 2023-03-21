@@ -6,7 +6,7 @@ import numpy as np
 import csv  
 import matplotlib.pyplot as plt
 
-
+#Inicio de App
 st.title('👾MEDALWARE APLICATION👾')
 st.text('MEDALWARE is a web application developed to display information through\nEDA techniques(Exploratory Data Analysis) related to malware samples\nfrom the MalwareBazaar site.The purpose of this app is to provide \ninformation about threats,identifying new trends and patterns.')
 
