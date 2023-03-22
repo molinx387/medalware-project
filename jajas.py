@@ -35,25 +35,29 @@ with open('detections.csv','w',encoding='UTF8', newline='') as f:
     writter.writerow(csvheader)
     writter.writerows(topics_malware) 
 
-file = open('detections.csv')
-csvreader = csv.reader(file)
+file_malware = open('detections.csv')
+csvreader = csv.reader(file_malware)
 sha256_list = []
+
 for row in csvreader:
     sha256_list.append(str(row[5]))
-ayuda = []
 
-def get_delivery(sha, head):
-    i = sha 
-    data_sha = { 'query' : 'get_info', 'hash':i}
-    response_sha = requests.post(url, data=data_sha, timeout=15, headers=head, allow_redirects=True)
-    if response_sha.json()["query_status"] == 'hash_not_found':
-        return("Unknow")
-    else:
-        response_json = response_sha.json()["data"][0]
-        delivery_method = response_json.get("delivery_method")
-        return(delivery_method)
+del(sha256_list[0])
+print(sha256_list)
+ayuda = []
+invento = [] 
 for shash in sha256_list:
-    ayuda.append(get_delivery(shash, headers)) 
+    data_sha = { 'query' : 'get_info', 'hash':shash}
+    invento.append(data_sha)
+    
+for every in invento:
+    response_sha = requests.post(url, data = every , timeout=15, headers=headers, allow_redirects=True)
+    response_json = response_sha.json()["data"][0]
+    delivery_method = response_json.get("delivery_method")
+    ayuda.append(delivery_method)
+
+for x in ayuda:
+    print(x)
 
 """
 df= pd.read_csv('detections.csv')
