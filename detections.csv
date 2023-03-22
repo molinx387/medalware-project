@@ -1,101 +1,101 @@
 FIRST SEEN,FILE TYPE,COUNTRY,TAGS,SIZE,SIGNATURE
-2023-03-21 16:32:05,exe,US,['exe'],184320,
-2023-03-21 16:31:37,exe,,['exe'],380800,
-2023-03-21 16:30:50,js,CA,['js'],4935488,
-2023-03-21 16:27:17,exe,US,['exe'],46080,
-2023-03-21 16:26:08,exe,,"['exe', 'Formbook']",680960,Formbook
-2023-03-21 16:26:06,zip,,"['Formbook', 'zip']",345808,Formbook
-2023-03-21 16:26:02,exe,,['exe'],1120768,
-2023-03-21 16:26:01,gz,,['gz'],996622,
-2023-03-21 16:08:42,exe,,"['exe', 'Formbook', 'Invoice']",941568,Formbook
-2023-03-21 16:08:32,rar,,"['Formbook', 'Invoice', 'rar']",777167,Formbook
-2023-03-21 16:02:35,exe,,"['32', 'exe', 'RedLineStealer', 'trojan']",1298432,RedLineStealer
-2023-03-21 15:59:39,rar,,"['Formbook', 'HSBC', 'Payment', 'rar']",912893,Formbook
-2023-03-21 15:40:31,exe,,"['exe', 'njrat', 'RAT']",36864,njrat
-2023-03-21 15:29:11,js,CH,"['Astaroth', 'BRA', 'geo', 'Guildma', 'js']",30334,Guildma
-2023-03-21 15:27:32,xlsx,,['xlsx'],441856,
-2023-03-21 15:27:31,cmd,CH,"['Astaroth', 'BRA', 'cmd', 'geo', 'Guildma']",305,Guildma
-2023-03-21 15:26:35,lnk,CH,"['Astaroth', 'BRA', 'geo', 'Guildma', 'lnk']",481,Guildma
-2023-03-21 15:15:36,exe,,"['exe', 'NetSupport']",2619980,NetSupport
-2023-03-21 15:07:33,exe,BR,['exe'],4622848,
-2023-03-21 15:05:09,exe,,"['exe', 'RedLineStealer']",327680,RedLineStealer
-2023-03-21 14:53:21,exe,,"['AgentTesla', 'exe']",877568,AgentTesla
-2023-03-21 14:47:21,exe,,"['AgentTesla', 'exe']",770048,AgentTesla
-2023-03-21 14:21:53,exe,,"['AgentTesla', 'exe']",1080832,AgentTesla
-2023-03-21 14:20:08,exe,,"['AgentTesla', 'exe']",273591,AgentTesla
-2023-03-21 14:19:13,exe,,"['AgentTesla', 'exe']",745472,AgentTesla
-2023-03-21 14:15:50,exe,,"['AgentTesla', 'exe']",2413056,AgentTesla
-2023-03-21 14:15:11,unknown,,"['ASPXChopperWebShell', 'webshell']",684,
-2023-03-21 14:14:15,unknown,,"['ASPXChopperWebShell', 'webshell']",707,
-2023-03-21 14:12:45,unknown,,"['ASPXChopperWebShell', 'webshell']",771,
-2023-03-21 14:09:12,exe,,"['AgentTesla', 'exe']",1746432,AgentTesla
-2023-03-21 14:05:56,exe,,"['AgentTesla', 'exe']",931840,AgentTesla
-2023-03-21 14:04:00,exe,,"['AgentTesla', 'exe']",811008,AgentTesla
-2023-03-21 13:54:40,xlsx,,"['CVE-2017-11882', 'xls', 'xlsx']",802262,
-2023-03-21 13:54:31,exe,DE,"['exe', 'Remcos', 'RemcosRAT']",1228800,RemcosRAT
-2023-03-21 13:52:30,js,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'js', 'megabiger-com', 'stage', 'ursnif']",33668,
-2023-03-21 13:52:11,exe,BR,['exe'],7462184,
-2023-03-21 13:51:22,js,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'js', 'megabiger-com', 'ursnif']",6699,
-2023-03-21 13:51:04,zip,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'megabiger-com', 'ursnif', 'zip']",1995,
-2023-03-21 13:48:26,msi,BR,"['msi', 'signed']",16047104,
-2023-03-21 13:47:23,exe,IT,"['dll', 'exe', 'GLS', 'gozi', 'isfb', 'ITA', 'loader', 'megabiger-com', 'ursnif']",4009984,
-2023-03-21 13:44:50,msi,BR,['msi'],7062528,
-2023-03-21 13:40:34,exe,,"['exe', 'njrat', 'RAT']",44032,njrat
-2023-03-21 13:37:41,unknown,BR,['cmd'],301,
-2023-03-21 13:32:49,pdf,IT,"['fattndl-site', 'GLS', 'gozi', 'ITA', 'pdf', 'ursnif']",25036,
-2023-03-21 13:32:45,pdf,IT,"['GLS', 'gozi', 'ITA', 'megabiger-com', 'pdf', 'ursnif']",25038,
-2023-03-21 13:32:42,pdf,IT,"['GLS', 'gozi', 'ITA', 'megabiger-com', 'pdf', 'ursnif']",150652,
-2023-03-21 13:30:04,exe,,"['exe', 'Fabookie', 'x64']",883712,Fabookie
-2023-03-21 13:30:02,exe,,"['.NET', 'exe', 'MSIL', 'XWorm']",294400,XWorm
-2023-03-21 13:30:01,exe,,"['exe', 'RedLineStealer']",256952,RedLineStealer
-2023-03-21 13:29:54,exe,,"['exe', 'RedLineStealer']",1087488,RedLineStealer
-2023-03-21 13:29:52,exe,,"['exe', 'Smoke Loader']",327168,Smoke Loader
-2023-03-21 13:29:46,exe,,"['exe', 'RedLineStealer']",898048,RedLineStealer
-2023-03-21 13:29:46,exe,,['exe'],367616,
-2023-03-21 13:29:40,exe,,"['CoinMiner', 'exe']",78848,CoinMiner
-2023-03-21 13:29:40,exe,,"['exe', 'RedLineStealer']",426496,RedLineStealer
-2023-03-21 13:29:39,exe,,"['exe', 'Stop']",840192,Stop
-2023-03-21 13:20:31,exe,,"['CryptBot', 'exe']",7072256,CryptBot
-2023-03-21 13:19:59,exe,,"['exe', 'Formbook']",884736,Formbook
-2023-03-21 13:16:18,exe,,"['exe', 'SnakeKeylogger']",836096,SnakeKeylogger
-2023-03-21 13:14:40,exe,,"['AgentTesla', 'exe']",464896,AgentTesla
-2023-03-21 13:08:36,exe,,"['exe', 'Formbook']",255086,Formbook
-2023-03-21 13:01:31,exe,,"['exe', 'GuLoader', 'signed']",386112,GuLoader
-2023-03-21 12:52:10,exe,,['exe'],6842440,
-2023-03-21 12:48:13,exe,,"['AgentTesla', 'exe']",1106432,AgentTesla
-2023-03-21 12:45:03,unknown,,"['ASPXWebShellr00ts', 'webshell']",51277,
-2023-03-21 12:33:13,exe,,"['DHL', 'exe', 'Formbook', 'Payment']",1103872,Formbook
-2023-03-21 12:33:04,rar,,"['DHL', 'rar']",912907,Formbook
-2023-03-21 12:33:03,exe,,"['exe', 'GuLoader', 'signed']",391936,GuLoader
-2023-03-21 12:32:53,exe,,"['agenttesla', 'exe', 'signed']",379896,AgentTesla
-2023-03-21 11:58:57,exe,,"['Amadey', 'exe']",1164800,Amadey
-2023-03-21 11:42:53,exe,,"['AgentTesla', 'exe']",1747968,AgentTesla
-2023-03-21 11:42:43,exe,,['exe'],886272,
-2023-03-21 11:42:29,exe,,"['exe', 'Smoke Loader']",181760,Smoke Loader
-2023-03-21 11:42:03,exe,,['exe'],1885366,
-2023-03-21 11:42:00,exe,,"['exe', 'RedLineStealer']",1058304,RedLineStealer
-2023-03-21 11:41:55,exe,,"['exe', 'Rhadamanthys']",256512,Rhadamanthys
-2023-03-21 11:41:18,exe,,['exe'],122750,
-2023-03-21 11:41:06,exe,,['exe'],1780039,
-2023-03-21 11:40:58,exe,,"['AgentTesla', 'exe']",922112,AgentTesla
-2023-03-21 11:40:45,exe,,"['AgentTesla', 'exe']",809472,AgentTesla
-2023-03-21 11:40:40,exe,,"['DanaBot', 'exe']",2625536,DanaBot
-2023-03-21 11:40:36,exe,,['exe'],998536,
-2023-03-21 11:40:03,exe,,"['AgentTesla', 'exe']",805888,AgentTesla
-2023-03-21 11:39:54,exe,,['exe'],6186250,
-2023-03-21 11:39:33,exe,,"['exe', 'Formbook']",255590,Formbook
-2023-03-21 11:39:21,exe,,"['exe', 'Loki']",1005056,Loki
-2023-03-21 11:39:14,exe,,"['exe', 'Loki']",728576,Loki
-2023-03-21 11:39:07,exe,,"['exe', 'Loki']",990208,Loki
-2023-03-21 11:39:02,exe,,"['exe', 'Loki']",1033216,Loki
-2023-03-21 11:38:59,exe,,"['exe', 'Loki']",1019904,Loki
-2023-03-21 11:37:59,exe,,"['exe', 'PureCrypter']",5114973,PureCrypter
-2023-03-21 11:37:54,exe,,"['exe', 'PureCrypter']",7225266,PureCrypter
-2023-03-21 11:35:35,exe,,"['exe', 'Loda']",1136095,Loda
-2023-03-21 11:21:49,vbs,GB,['vbs'],201185,
-2023-03-21 11:21:38,exe,GB,"['exe', 'Formbook']",766976,Formbook
-2023-03-21 11:21:26,js,GB,['js'],45659,
-2023-03-21 11:21:15,exe,GB,"['exe', 'XWorm']",204800,XWorm
-2023-03-21 11:18:55,exe,,"['32', 'AgentTesla', 'exe', 'trojan']",1065472,AgentTesla
-2023-03-21 11:18:48,exe,,"['32', 'exe', 'GuLoader', 'trojan']",570442,GuLoader
-2023-03-21 11:18:33,exe,,"['32', 'exe', 'SnakeKeylogger', 'trojan']",782848,SnakeKeylogger
+2023-03-22 00:50:14,application/x-dosexec,US,['exe'],366080,
+2023-03-22 00:49:17,application/x-dosexec,US,['exe'],364544,
+2023-03-22 00:48:22,application/x-dosexec,US,['exe'],367616,
+2023-03-22 00:47:37,application/x-dosexec,US,['exe'],257024,
+2023-03-22 00:46:31,application/x-dosexec,US,['exe'],257536,
+2023-03-22 00:45:35,application/x-dosexec,US,['exe'],211384,
+2023-03-22 00:44:18,application/x-dosexec,US,['exe'],64512,
+2023-03-21 22:39:15,text/plain,US,['js'],83384,
+2023-03-21 22:28:02,application/octet-stream,DE,"['emotet', 'heodo', 'one']",287696,
+2023-03-21 22:00:40,application/x-dosexec,,"['DCRat', 'exe']",2669806,DCRat
+2023-03-21 20:45:50,application/x-iso9660-image,,['img'],1900544,
+2023-03-21 20:45:35,application/x-dosexec,,"['DCRat', 'exe']",2720900,DCRat
+2023-03-21 20:28:04,application/x-dosexec,US,['exe'],468230,
+2023-03-21 20:05:33,application/x-dosexec,,"['exe', 'RedLineStealer']",70144,RedLineStealer
+2023-03-21 19:50:33,application/x-dosexec,,"['exe', 'njrat', 'RAT']",44032,njrat
+2023-03-21 19:48:25,application/x-dosexec,US,"['3581911946', 'exe', 'IcedID', 'signed']",486944,IcedID
+2023-03-21 19:20:33,application/x-dosexec,,"['exe', 'njrat', 'RAT']",44032,njrat
+2023-03-21 19:11:01,text/plain,,,1856131,
+2023-03-21 19:08:11,application/x-dosexec,,['Sodinokibi'],122880,Sodinokibi
+2023-03-21 19:01:20,application/x-dosexec,,,157184,
+2023-03-21 19:00:37,application/x-dosexec,,"['DCRat', 'exe']",2562560,DCRat
+2023-03-21 18:55:33,application/x-dosexec,,"['exe', 'RedLineStealer']",1084928,RedLineStealer
+2023-03-21 18:40:25,application/x-dosexec,,"['CryptBot', 'exe']",7160832,CryptBot
+2023-03-21 18:38:19,application/x-dosexec,,"['exe', 'fe2457d4da43adde492576a91398086e', 'LaplasClipper']",9068032,LaplasClipper
+2023-03-21 18:38:05,application/x-dosexec,,"['bin', 'exe']",1659392,
+2023-03-21 18:25:09,text/plain,,['js'],55487,
+2023-03-21 18:24:36,application/x-dosexec,,"['AgentTesla', 'exe']",800256,AgentTesla
+2023-03-21 18:22:58,application/x-dosexec,,"['exe', 'SnakeKeylogger']",698880,SnakeKeylogger
+2023-03-21 18:21:16,application/x-dosexec,,"['exe', 'Formbook']",1245696,Formbook
+2023-03-21 18:18:50,application/vnd.ms-excel,,['xls'],91136,
+2023-03-21 17:58:34,application/x-dosexec,,"['exe', 'VectorStealer']",1729024,VectorStealer
+2023-03-21 17:36:18,application/x-dosexec,,"['32', 'Amadey', 'exe', 'trojan']",1335808,Amadey
+2023-03-21 17:33:02,application/zip,IT,"['file-pumped', 'RedLine', 'RedLineStealer', 'Stealer', 'zip']",7174458,
+2023-03-21 17:27:23,application/x-dosexec,DE,"['1679411795', 'BB20', 'dll', 'Qakbot']",435141,
+2023-03-21 17:27:11,text/plain,DE,"['1679411795', 'BB20', 'js', 'Qakbot']",59448,
+2023-03-21 17:27:02,application/zip,DE,"['1679411795', 'BB20', 'pw-775', 'Qakbot', 'zip']",22635,
+2023-03-21 17:20:56,text/rtf,IT,"['CVE-2017-11882', 'doc', 'Formbook']",27505,Formbook
+2023-03-21 17:12:18,application/x-executable,BE,"['DDosia', 'elf']",5832704,
+2023-03-21 17:12:05,application/x-executable,BE,"['DDosia', 'elf']",5959680,
+2023-03-21 17:11:51,application/x-mach-binary,BE,"['DDosia', 'macho']",6179250,
+2023-03-21 17:11:38,application/x-mach-binary,BE,"['DDosia', 'macho']",6380752,
+2023-03-21 17:11:24,application/x-dosexec,BE,"['DDosia', 'exe']",5811200,
+2023-03-21 17:11:11,application/x-dosexec,BE,"['DDosia', 'exe']",6209024,
+2023-03-21 16:52:07,application/x-dosexec,,"['32', 'exe', 'RedLineStealer', 'trojan']",1298432,RedLineStealer
+2023-03-21 16:43:40,application/zip,IT,"['apk', 'banker', 'nexus', 'signed', 'Sova']",4792032,Sova
+2023-03-21 16:32:05,application/x-dosexec,US,"['exe', 'NanoCore']",184320,NanoCore
+2023-03-21 16:31:37,application/x-dosexec,,"['exe', 'GuLoader', 'signed']",380800,GuLoader
+2023-03-21 16:30:50,text/plain,CA,['js'],4935488,
+2023-03-21 16:27:17,application/x-dosexec,US,"['AsyncRAT', 'exe']",46080,AsyncRAT
+2023-03-21 16:26:08,application/x-dosexec,,"['exe', 'Formbook']",680960,Formbook
+2023-03-21 16:26:06,application/zip,,"['Formbook', 'zip']",345808,Formbook
+2023-03-21 16:26:02,application/x-dosexec,,"['BluStealer', 'exe']",1120768,BluStealer
+2023-03-21 16:26:01,application/x-rar,,"['BluStealer', 'gz']",996622,BluStealer
+2023-03-21 16:08:42,application/x-dosexec,,"['exe', 'Formbook', 'Invoice']",941568,Formbook
+2023-03-21 16:08:32,application/x-rar,,"['Formbook', 'Invoice', 'rar']",777167,Formbook
+2023-03-21 16:02:35,application/x-dosexec,,"['32', 'exe', 'RedLineStealer', 'trojan']",1298432,RedLineStealer
+2023-03-21 15:59:39,application/x-rar,,"['Formbook', 'HSBC', 'Payment', 'rar']",912893,Formbook
+2023-03-21 15:40:31,application/x-dosexec,,"['exe', 'njrat', 'RAT']",36864,njrat
+2023-03-21 15:29:11,text/xml,CH,"['Astaroth', 'BRA', 'geo', 'Guildma', 'js']",30334,Guildma
+2023-03-21 15:27:32,application/vnd.ms-excel,,['xlsx'],441856,
+2023-03-21 15:27:31,text/plain,CH,"['Astaroth', 'BRA', 'cmd', 'geo', 'Guildma']",305,Guildma
+2023-03-21 15:26:35,application/octet-stream,CH,"['Astaroth', 'BRA', 'geo', 'Guildma', 'lnk']",481,Guildma
+2023-03-21 15:15:36,application/x-dosexec,,"['exe', 'NetSupport']",2619980,NetSupport
+2023-03-21 15:07:33,application/x-dosexec,BR,['exe'],4622848,
+2023-03-21 15:05:09,application/x-dosexec,,"['exe', 'RedLineStealer']",327680,RedLineStealer
+2023-03-21 14:53:21,application/x-dosexec,,"['AgentTesla', 'exe']",877568,AgentTesla
+2023-03-21 14:47:21,application/x-dosexec,,"['AgentTesla', 'exe']",770048,AgentTesla
+2023-03-21 14:21:53,application/x-dosexec,,"['AgentTesla', 'exe']",1080832,AgentTesla
+2023-03-21 14:20:08,application/x-dosexec,,"['AgentTesla', 'exe']",273591,AgentTesla
+2023-03-21 14:19:13,application/x-dosexec,,"['AgentTesla', 'exe']",745472,AgentTesla
+2023-03-21 14:15:50,application/x-dosexec,,"['AgentTesla', 'exe']",2413056,AgentTesla
+2023-03-21 14:15:11,text/plain,,"['ASPXChopperWebShell', 'webshell']",684,
+2023-03-21 14:14:15,text/plain,,"['ASPXChopperWebShell', 'webshell']",707,
+2023-03-21 14:12:45,text/plain,,"['ASPXChopperWebShell', 'webshell']",771,
+2023-03-21 14:09:12,application/x-dosexec,,"['AgentTesla', 'exe']",1746432,AgentTesla
+2023-03-21 14:05:56,application/x-dosexec,,"['AgentTesla', 'exe']",931840,AgentTesla
+2023-03-21 14:04:00,application/x-dosexec,,"['AgentTesla', 'exe']",811008,AgentTesla
+2023-03-21 13:54:40,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,,"['CVE-2017-11882', 'xls', 'xlsx']",802262,
+2023-03-21 13:54:31,application/x-dosexec,DE,"['exe', 'Remcos', 'RemcosRAT']",1228800,RemcosRAT
+2023-03-21 13:52:30,text/plain,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'js', 'megabiger-com', 'stage', 'ursnif']",33668,
+2023-03-21 13:52:11,application/x-dosexec,BR,['exe'],7462184,
+2023-03-21 13:51:22,text/plain,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'js', 'megabiger-com', 'ursnif']",6699,
+2023-03-21 13:51:04,application/zip,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'megabiger-com', 'ursnif', 'zip']",1995,
+2023-03-21 13:48:26,application/x-msi,BR,"['msi', 'signed']",16047104,
+2023-03-21 13:47:23,application/x-dosexec,IT,"['dll', 'exe', 'GLS', 'gozi', 'isfb', 'ITA', 'loader', 'megabiger-com', 'ursnif']",4009984,
+2023-03-21 13:44:50,application/x-msi,BR,['msi'],7062528,
+2023-03-21 13:40:34,application/x-dosexec,,"['exe', 'njrat', 'RAT']",44032,njrat
+2023-03-21 13:37:41,text/plain,BR,['cmd'],301,
+2023-03-21 13:32:49,application/pdf,IT,"['fattndl-site', 'GLS', 'gozi', 'ITA', 'pdf', 'ursnif']",25036,
+2023-03-21 13:32:45,application/pdf,IT,"['GLS', 'gozi', 'ITA', 'megabiger-com', 'pdf', 'ursnif']",25038,
+2023-03-21 13:32:42,application/pdf,IT,"['GLS', 'gozi', 'ITA', 'megabiger-com', 'pdf', 'ursnif']",150652,
+2023-03-21 13:30:04,application/x-dosexec,,"['exe', 'Fabookie', 'x64']",883712,Fabookie
+2023-03-21 13:30:02,application/x-dosexec,,"['.NET', 'exe', 'MSIL', 'XWorm']",294400,XWorm
+2023-03-21 13:30:01,application/x-dosexec,,"['exe', 'RedLineStealer']",256952,RedLineStealer
+2023-03-21 13:29:54,application/x-dosexec,,"['exe', 'RedLineStealer']",1087488,RedLineStealer
+2023-03-21 13:29:52,application/x-dosexec,,"['exe', 'Smoke Loader']",327168,Smoke Loader
+2023-03-21 13:29:46,application/x-dosexec,,"['exe', 'RedLineStealer']",898048,RedLineStealer
+2023-03-21 13:29:46,application/x-dosexec,,['exe'],367616,
+2023-03-21 13:29:40,application/x-dosexec,,"['CoinMiner', 'exe']",78848,CoinMiner
+2023-03-21 13:29:40,application/x-dosexec,,"['exe', 'RedLineStealer']",426496,RedLineStealer
