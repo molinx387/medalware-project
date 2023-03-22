@@ -35,8 +35,28 @@ with open('detections.csv','w',encoding='UTF8', newline='') as f:
     writter.writerow(csvheader)
     writter.writerows(topics_malware) 
 
+file = open('detections.csv')
+csvreader = csv.reader(file)
+sha256_list = []
+for row in csvreader:
+    sha256_list.append(str(row[5]))
+ayuda = []
 
-"""df= pd.read_csv('detections.csv')
+def get_delivery(sha, head):
+    i = sha 
+    data_sha = { 'query' : 'get_info', 'hash':i}
+    response_sha = requests.post(url, data=data_sha, timeout=15, headers=head, allow_redirects=True)
+    if response_sha.json()["query_status"] == 'hash_not_found':
+        return("Unknow")
+    else:
+        response_json = response_sha.json()["data"][0]
+        delivery_method = response_json.get("delivery_method")
+        return(delivery_method)
+for shash in sha256_list:
+    ayuda.append(get_delivery(shash, headers)) 
+
+"""
+df= pd.read_csv('detections.csv')
 st.dataframe(df)
 st.header(' 📈 Historic Data Flow ')
 st.bar_chart(data=df, x='COUNTRY', y='SIZE', width=1000, height=250, use_container_width=False)

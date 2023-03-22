@@ -1,101 +1,101 @@
-FIRST SEEN,FILE TYPE,COUNTRY,TAGS,SIZE,SIGNATURE
-2023-03-22 00:50:14,application/x-dosexec,US,['exe'],366080,
-2023-03-22 00:49:17,application/x-dosexec,US,['exe'],364544,
-2023-03-22 00:48:22,application/x-dosexec,US,['exe'],367616,
-2023-03-22 00:47:37,application/x-dosexec,US,['exe'],257024,
-2023-03-22 00:46:31,application/x-dosexec,US,['exe'],257536,
-2023-03-22 00:45:35,application/x-dosexec,US,['exe'],211384,
-2023-03-22 00:44:18,application/x-dosexec,US,['exe'],64512,
-2023-03-21 22:39:15,text/plain,US,['js'],83384,
-2023-03-21 22:28:02,application/octet-stream,DE,"['emotet', 'heodo', 'one']",287696,
-2023-03-21 22:00:40,application/x-dosexec,,"['DCRat', 'exe']",2669806,DCRat
-2023-03-21 20:45:50,application/x-iso9660-image,,['img'],1900544,
-2023-03-21 20:45:35,application/x-dosexec,,"['DCRat', 'exe']",2720900,DCRat
-2023-03-21 20:28:04,application/x-dosexec,US,['exe'],468230,
-2023-03-21 20:05:33,application/x-dosexec,,"['exe', 'RedLineStealer']",70144,RedLineStealer
-2023-03-21 19:50:33,application/x-dosexec,,"['exe', 'njrat', 'RAT']",44032,njrat
-2023-03-21 19:48:25,application/x-dosexec,US,"['3581911946', 'exe', 'IcedID', 'signed']",486944,IcedID
-2023-03-21 19:20:33,application/x-dosexec,,"['exe', 'njrat', 'RAT']",44032,njrat
-2023-03-21 19:11:01,text/plain,,,1856131,
-2023-03-21 19:08:11,application/x-dosexec,,['Sodinokibi'],122880,Sodinokibi
-2023-03-21 19:01:20,application/x-dosexec,,,157184,
-2023-03-21 19:00:37,application/x-dosexec,,"['DCRat', 'exe']",2562560,DCRat
-2023-03-21 18:55:33,application/x-dosexec,,"['exe', 'RedLineStealer']",1084928,RedLineStealer
-2023-03-21 18:40:25,application/x-dosexec,,"['CryptBot', 'exe']",7160832,CryptBot
-2023-03-21 18:38:19,application/x-dosexec,,"['exe', 'fe2457d4da43adde492576a91398086e', 'LaplasClipper']",9068032,LaplasClipper
-2023-03-21 18:38:05,application/x-dosexec,,"['bin', 'exe']",1659392,
-2023-03-21 18:25:09,text/plain,,['js'],55487,
-2023-03-21 18:24:36,application/x-dosexec,,"['AgentTesla', 'exe']",800256,AgentTesla
-2023-03-21 18:22:58,application/x-dosexec,,"['exe', 'SnakeKeylogger']",698880,SnakeKeylogger
-2023-03-21 18:21:16,application/x-dosexec,,"['exe', 'Formbook']",1245696,Formbook
-2023-03-21 18:18:50,application/vnd.ms-excel,,['xls'],91136,
-2023-03-21 17:58:34,application/x-dosexec,,"['exe', 'VectorStealer']",1729024,VectorStealer
-2023-03-21 17:36:18,application/x-dosexec,,"['32', 'Amadey', 'exe', 'trojan']",1335808,Amadey
-2023-03-21 17:33:02,application/zip,IT,"['file-pumped', 'RedLine', 'RedLineStealer', 'Stealer', 'zip']",7174458,
-2023-03-21 17:27:23,application/x-dosexec,DE,"['1679411795', 'BB20', 'dll', 'Qakbot']",435141,
-2023-03-21 17:27:11,text/plain,DE,"['1679411795', 'BB20', 'js', 'Qakbot']",59448,
-2023-03-21 17:27:02,application/zip,DE,"['1679411795', 'BB20', 'pw-775', 'Qakbot', 'zip']",22635,
-2023-03-21 17:20:56,text/rtf,IT,"['CVE-2017-11882', 'doc', 'Formbook']",27505,Formbook
-2023-03-21 17:12:18,application/x-executable,BE,"['DDosia', 'elf']",5832704,
-2023-03-21 17:12:05,application/x-executable,BE,"['DDosia', 'elf']",5959680,
-2023-03-21 17:11:51,application/x-mach-binary,BE,"['DDosia', 'macho']",6179250,
-2023-03-21 17:11:38,application/x-mach-binary,BE,"['DDosia', 'macho']",6380752,
-2023-03-21 17:11:24,application/x-dosexec,BE,"['DDosia', 'exe']",5811200,
-2023-03-21 17:11:11,application/x-dosexec,BE,"['DDosia', 'exe']",6209024,
-2023-03-21 16:52:07,application/x-dosexec,,"['32', 'exe', 'RedLineStealer', 'trojan']",1298432,RedLineStealer
-2023-03-21 16:43:40,application/zip,IT,"['apk', 'banker', 'nexus', 'signed', 'Sova']",4792032,Sova
-2023-03-21 16:32:05,application/x-dosexec,US,"['exe', 'NanoCore']",184320,NanoCore
-2023-03-21 16:31:37,application/x-dosexec,,"['exe', 'GuLoader', 'signed']",380800,GuLoader
-2023-03-21 16:30:50,text/plain,CA,['js'],4935488,
-2023-03-21 16:27:17,application/x-dosexec,US,"['AsyncRAT', 'exe']",46080,AsyncRAT
-2023-03-21 16:26:08,application/x-dosexec,,"['exe', 'Formbook']",680960,Formbook
-2023-03-21 16:26:06,application/zip,,"['Formbook', 'zip']",345808,Formbook
-2023-03-21 16:26:02,application/x-dosexec,,"['BluStealer', 'exe']",1120768,BluStealer
-2023-03-21 16:26:01,application/x-rar,,"['BluStealer', 'gz']",996622,BluStealer
-2023-03-21 16:08:42,application/x-dosexec,,"['exe', 'Formbook', 'Invoice']",941568,Formbook
-2023-03-21 16:08:32,application/x-rar,,"['Formbook', 'Invoice', 'rar']",777167,Formbook
-2023-03-21 16:02:35,application/x-dosexec,,"['32', 'exe', 'RedLineStealer', 'trojan']",1298432,RedLineStealer
-2023-03-21 15:59:39,application/x-rar,,"['Formbook', 'HSBC', 'Payment', 'rar']",912893,Formbook
-2023-03-21 15:40:31,application/x-dosexec,,"['exe', 'njrat', 'RAT']",36864,njrat
-2023-03-21 15:29:11,text/xml,CH,"['Astaroth', 'BRA', 'geo', 'Guildma', 'js']",30334,Guildma
-2023-03-21 15:27:32,application/vnd.ms-excel,,['xlsx'],441856,
-2023-03-21 15:27:31,text/plain,CH,"['Astaroth', 'BRA', 'cmd', 'geo', 'Guildma']",305,Guildma
-2023-03-21 15:26:35,application/octet-stream,CH,"['Astaroth', 'BRA', 'geo', 'Guildma', 'lnk']",481,Guildma
-2023-03-21 15:15:36,application/x-dosexec,,"['exe', 'NetSupport']",2619980,NetSupport
-2023-03-21 15:07:33,application/x-dosexec,BR,['exe'],4622848,
-2023-03-21 15:05:09,application/x-dosexec,,"['exe', 'RedLineStealer']",327680,RedLineStealer
-2023-03-21 14:53:21,application/x-dosexec,,"['AgentTesla', 'exe']",877568,AgentTesla
-2023-03-21 14:47:21,application/x-dosexec,,"['AgentTesla', 'exe']",770048,AgentTesla
-2023-03-21 14:21:53,application/x-dosexec,,"['AgentTesla', 'exe']",1080832,AgentTesla
-2023-03-21 14:20:08,application/x-dosexec,,"['AgentTesla', 'exe']",273591,AgentTesla
-2023-03-21 14:19:13,application/x-dosexec,,"['AgentTesla', 'exe']",745472,AgentTesla
-2023-03-21 14:15:50,application/x-dosexec,,"['AgentTesla', 'exe']",2413056,AgentTesla
-2023-03-21 14:15:11,text/plain,,"['ASPXChopperWebShell', 'webshell']",684,
-2023-03-21 14:14:15,text/plain,,"['ASPXChopperWebShell', 'webshell']",707,
-2023-03-21 14:12:45,text/plain,,"['ASPXChopperWebShell', 'webshell']",771,
-2023-03-21 14:09:12,application/x-dosexec,,"['AgentTesla', 'exe']",1746432,AgentTesla
-2023-03-21 14:05:56,application/x-dosexec,,"['AgentTesla', 'exe']",931840,AgentTesla
-2023-03-21 14:04:00,application/x-dosexec,,"['AgentTesla', 'exe']",811008,AgentTesla
-2023-03-21 13:54:40,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,,"['CVE-2017-11882', 'xls', 'xlsx']",802262,
-2023-03-21 13:54:31,application/x-dosexec,DE,"['exe', 'Remcos', 'RemcosRAT']",1228800,RemcosRAT
-2023-03-21 13:52:30,text/plain,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'js', 'megabiger-com', 'stage', 'ursnif']",33668,
-2023-03-21 13:52:11,application/x-dosexec,BR,['exe'],7462184,
-2023-03-21 13:51:22,text/plain,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'js', 'megabiger-com', 'ursnif']",6699,
-2023-03-21 13:51:04,application/zip,IT,"['GLS', 'gozi', 'isfb', 'ITA', 'megabiger-com', 'ursnif', 'zip']",1995,
-2023-03-21 13:48:26,application/x-msi,BR,"['msi', 'signed']",16047104,
-2023-03-21 13:47:23,application/x-dosexec,IT,"['dll', 'exe', 'GLS', 'gozi', 'isfb', 'ITA', 'loader', 'megabiger-com', 'ursnif']",4009984,
-2023-03-21 13:44:50,application/x-msi,BR,['msi'],7062528,
-2023-03-21 13:40:34,application/x-dosexec,,"['exe', 'njrat', 'RAT']",44032,njrat
-2023-03-21 13:37:41,text/plain,BR,['cmd'],301,
-2023-03-21 13:32:49,application/pdf,IT,"['fattndl-site', 'GLS', 'gozi', 'ITA', 'pdf', 'ursnif']",25036,
-2023-03-21 13:32:45,application/pdf,IT,"['GLS', 'gozi', 'ITA', 'megabiger-com', 'pdf', 'ursnif']",25038,
-2023-03-21 13:32:42,application/pdf,IT,"['GLS', 'gozi', 'ITA', 'megabiger-com', 'pdf', 'ursnif']",150652,
-2023-03-21 13:30:04,application/x-dosexec,,"['exe', 'Fabookie', 'x64']",883712,Fabookie
-2023-03-21 13:30:02,application/x-dosexec,,"['.NET', 'exe', 'MSIL', 'XWorm']",294400,XWorm
-2023-03-21 13:30:01,application/x-dosexec,,"['exe', 'RedLineStealer']",256952,RedLineStealer
-2023-03-21 13:29:54,application/x-dosexec,,"['exe', 'RedLineStealer']",1087488,RedLineStealer
-2023-03-21 13:29:52,application/x-dosexec,,"['exe', 'Smoke Loader']",327168,Smoke Loader
-2023-03-21 13:29:46,application/x-dosexec,,"['exe', 'RedLineStealer']",898048,RedLineStealer
-2023-03-21 13:29:46,application/x-dosexec,,['exe'],367616,
-2023-03-21 13:29:40,application/x-dosexec,,"['CoinMiner', 'exe']",78848,CoinMiner
-2023-03-21 13:29:40,application/x-dosexec,,"['exe', 'RedLineStealer']",426496,RedLineStealer
+FIRST SEEN,FILE TYPE,COUNTRY,SIZE,SIGNATURE,SHA256
+2023-03-22 19:56:28,exe,,279448,Formbook,dc2f8a85b52e8562ada16c2ee6cda9770a3c010f894901844d0104476bae67b3
+2023-03-22 19:46:55,exe,,293451,Formbook,85259a321d6b1d54bae58397546222f0cf4584467240f0cbcdb7445577b66510
+2023-03-22 19:46:45,rtf,,9432,,cdf4664c93b698fdc7ccff8589a27bbd4b1ab01b33c44fa6a1ad63747be7e108
+2023-03-22 19:38:20,ps1,US,705927,AsyncRAT,d623550382d57e1f3b8a521f00d4f05179da3073ac07d4ccaf4ced2999afc18b
+2023-03-22 19:30:53,exe,,1036288,RedLineStealer,e16603e1fe186f97f2830dbec4a1648733640e0de586771935fd8b17cc1b1704
+2023-03-22 19:30:51,exe,,1038336,RedLineStealer,f4aef4e4264c997d4475ab1f26bc08d64cf1a7f4a49d44a651b4a5f6474179d3
+2023-03-22 19:29:53,exe,,950272,AgentTesla,b6567f8e657603d4cd5b53d13a603a609a97bc32726757bfb88d805fdfeb4e1a
+2023-03-22 19:28:17,exe,,973000,,1d8be1366aea91f7eb8282e110bf632394e3bafae86bbfacbb5145da9c92ee68
+2023-03-22 19:21:09,exe,,3424768,njrat,f33af993fd18bb47b931e031b68dc5e030dbea7118ed4746183238066336f597
+2023-03-22 19:17:12,exe,,422400,Vidar,d86b56fbb2ae739877ad2143f719b0c60df88b6d773c9f837f8490fb157ec165
+2023-03-22 19:16:00,exe,,6857216,CryptBot,c00cfa33f9810d7332c7f184d5bc0b3733fe47bcd076787b01a82e11ee457815
+2023-03-22 19:14:53,exe,,931328,AgentTesla,54d2d443952347ccc724a8f39806ff9fca252511b2fca91e2fd6c9998612ed32
+2023-03-22 19:14:40,exe,,928768,AgentTesla,26e4169f450ad33d2ac91ed523a144039a75b295dd77493dd6b15bda5e7094f6
+2023-03-22 19:14:11,exe,,2199093,GCleaner,1ed63828c472771cf59e95852088a702e381e3350d9c4cf831ca102d922e611a
+2023-03-22 19:14:08,exe,,1361047,,0783debdfb83fe7e1beba28cbbf85425c70322dceb6fb566a29e5a7e66385ccf
+2023-03-22 19:13:45,exe,,2154138,GCleaner,5ab2cc3237c2857bc3943ded65eeea7cc88bd1dcfbb170e8069def2ca54e46ee
+2023-03-22 19:13:31,exe,,799232,AgentTesla,8ab437ed1b348f24d6a58965cdc27a3e23cfc82fef4456bd3623f739abf196a9
+2023-03-22 19:13:25,exe,,2037248,LaplasClipper,dcd60ec48ce671c27c2dd6abac75f015e64d5eeb1fdefe9a85bb706e99f2071c
+2023-03-22 19:13:21,exe,,3178191,,22eaf3a0b0347866dd89bb191bbd54a64e94a0d472244bf1f5eaf34ae87654e1
+2023-03-22 19:13:09,exe,,5764014,,97bbbbc732a346b08a7b217931091dc43026b58edad8a393ce3e6a1a0e66e0f4
+2023-03-22 19:12:55,exe,,4068352,,02d06fe41be6335f3a8bf9d5dbbd4c2c7ff1b6779085bd2207bed28e7ee206ee
+2023-03-22 19:12:34,exe,,3538982,,63408e59d89c7afa2dc16d018ee143de139143ea1ceb8326a6a8bf0f4637dabd
+2023-03-22 19:11:29,exe,,1526040,CoinMiner,c922b1a425986c6236c93851e4dc507ecd68d6bb4fbf82b13fb26175ad504265
+2023-03-22 19:11:19,exe,,1760719,,1ff0fcdfbcb2a04aa6a1d76f399fb1f9b538424c3305862b09f130120026356e
+2023-03-22 19:10:56,exe,,4511232,,f187219737bc5ab2a2bdcba67f7a254a230d3880d4636ce52302f0645d746911
+2023-03-22 19:10:39,exe,,592896,Smoke Loader,6f6b1424cc2e428a51edd10920d1defbf31b47976c6f55f1663e95e45d5b9c91
+2023-03-22 19:10:23,exe,,247296,,c817bb3609f89b4260ac79aa5a9932f72d9a9555aae4bce2cbb4585f5f5b4add
+2023-03-22 19:10:04,exe,,841216,AgentTesla,a169b28aef17ec40410b335f295192681dc0eaaaa1b9f870f87efb009a83447f
+2023-03-22 19:09:59,exe,,841728,AgentTesla,58c82c6759d1284e35311a76db2c5c81db938ac0722ab97ee5c56ac75caefe13
+2023-03-22 19:09:41,exe,,4510720,,288a5c602d071bc4630b8bac57c2e9ea24f68919b552ccb6a2b2b543d6a895b1
+2023-03-22 19:09:35,exe,,1900032,LaplasClipper,5502d7c1c81714b998f594e523274a828d919f69dc08bffde5fe118918a8f43b
+2023-03-22 19:09:00,exe,,267264,Smoke Loader,1bc8d666e4db3a12f4b6c39367aecc4da6d0824965842f4d0dd714cc9d7e0e40
+2023-03-22 19:05:53,exe,,1033728,RedLineStealer,72e19666dc31db00097b34d0365832bc038908071659132ad9079377507c31a5
+2023-03-22 19:05:51,exe,,1032192,RedLineStealer,1642832b7b4dff2a31a3ae473e3d84bc1b3867b750537adb617dc1ed817b845a
+2023-03-22 19:05:48,exe,,550912,RedLineStealer,2a71946ec6379a803b32f7efb541a51ddfd0d77d74ca8c0791d25052bc6fcbb2
+2023-03-22 19:05:41,exe,,255651,Formbook,1a5f6d761050ca929b99fc66e7c4b57f321421a7372dc752d8000e79bb920ca0
+2023-03-22 19:05:37,exe,,2202360,GCleaner,8109b95b342d5d5e160d4c80742fbab59e1987eca6ecbb083853551d87415e44
+2023-03-22 19:05:22,exe,,722944,Loki,7473f0959c99ec6c3b133ebced71d1a38690fe12f4b9753b1e016545240cbbb0
+2023-03-22 19:05:17,exe,,368128,LaplasClipper,d0510da2366e0ffc6a3a085a69d6d395d3f99b9090da13b956e03fa50273e064
+2023-03-22 19:05:14,exe,,1000448,LummaStealer,41ae7c8a95a5367900997394091ab6fb70b83157906df1c95f7dddf124a07532
+2023-03-22 19:05:08,exe,,901120,ManusCrypt,bbd550a356ad847fbec4080976e7f7d72b3d431d923df772b65880b7a5cc7254
+2023-03-22 19:05:04,exe,,76800,Phorpiex,b09663d3fd327fb84cb3aa1ffef1f57916cf1ac0f4c7cc18c6e27ae052e7c5ee
+2023-03-22 19:04:38,vbs,,12149,Loki,2caacd94e02ea3156a3eb70a333a85c294024f7d6d0c152966b1ad0bbe263b28
+2023-03-22 19:04:36,vbs,,325948,AgentTesla,e1075db21ec06c9a0fbf86d85a8c9d3c5cbbd47384ae8a527ff9a4f5c7197e4f
+2023-03-22 19:04:21,vbs,,334166,AgentTesla,e8a6d88684bf14f2275975c168ee2fec3bec64b1d8bd5309fb34270f61e4baae
+2023-03-22 19:03:55,vbs,,945783,GuLoader,f6f4a484aeeafdc47151c68c6f28c7774e177c24990c0a656e09f8e88b9af3e3
+2023-03-22 19:03:53,vbs,,921233,GuLoader,60b1ead9e5d8f7a259be747f10bf7ee59dfb93fa89bc4c4ff61c53aef8d42144
+2023-03-22 19:03:51,vbs,,931169,GuLoader,73b965297a91b42b3124e2a39f9e9aa9671a04e0ba42138cabb47f97c7efb169
+2023-03-22 19:03:47,js,,123561,AsyncRAT,b2aab26d36c289c0922a8cde64767571c9fec6daa765caee23a9b2c1fe7c0b17
+2023-03-22 19:03:43,js,,32265,,f3d11767312676ba55c151aa3e4b602abbe5b5181883b81fb9c29f178bb5bfb2
+2023-03-22 19:03:24,js,,94589,AsyncRAT,ac9b68f6b0036e76adad58e6d1fd4c2d043e9ef53ac516ca38945bdfa3283312
+2023-03-22 19:02:52,jar,,983105,Adwind,b7f46caa4c8a8bdc972cc75781ad43cf8d8436a8640e24b03d34f02560643b70
+2023-03-22 19:02:50,jar,,210189,STRRAT,5f0e14beeef801bd36a5a4dd142fc0463d477dd664f407f4ff563977b4657968
+2023-03-22 19:02:47,xll,,735744,,96f90f57107289f00f447da22c906c6e4e3e9e8e9a785c794ed4cfc027b27cc4
+2023-03-22 19:02:38,exe,,741888,AgentTesla,1249d019671494f72d4c416ce9b7cf6523ac63eca06dad4da4eaf936d3e36888
+2023-03-22 19:02:28,exe,,1317888,AgentTesla,9b33661773d15950915dc3344a428ea6334f25d5c30c05cf07c8bff60dd9f9be
+2023-03-22 19:02:24,exe,,687039,Formbook,d073f24c0419d1e919056070192b480bced67c468707f1e5fd038f950a2ccaed
+2023-03-22 19:02:18,exe,,275608,GuLoader,6b017394a528be196879753f3c7ae1403aeda629a31b3b6993bc28921521808d
+2023-03-22 19:02:10,exe,,795648,AgentTesla,1f1ef5b3b5392d41a5a3419d9760066f8f6e2c55e352c92f5b3344be3c214aa3
+2023-03-22 19:02:07,exe,,319438,Formbook,06243274174960778e1adac528d0c2641cf742fa2ba0759c9fe762f7a0692aff
+2023-03-22 19:01:32,exe,,846848,AgentTesla,572cff30e2206bea4616dfe3ff3dcf490728492fd22f5b52a2caf54d8dfef82b
+2023-03-22 19:01:17,exe,,314952,Formbook,43b59add45c5a5b3ade4f706143768fc6ee0006500aa0b1a983af81900acbb73
+2023-03-22 19:01:13,exe,,859136,Loki,bc8a12bfd7a792586d78f4fac22f22ac9d2dfe31452d2e99b7cd47180bd4b295
+2023-03-22 19:00:22,exe,,1035264,SnakeKeylogger,4ab665d75bc525a7bb5cffb01c28943b70fb3d4c7aceaf8a9a1bdbf1f0c7277a
+2023-03-22 19:00:15,exe,,650554,AsyncRAT,7158cb26fb5a843496b92e30c4366fdfa2b49cd8c59f280ee71e853a68ef0a69
+2023-03-22 19:00:11,exe,,819712,Formbook,fcc1683097894f7f965dcbb2abcd28e98f4ab15e925ceaa75ae35bcf0c88f372
+2023-03-22 19:00:08,exe,,816128,Formbook,c5963a1865a79e63cf6c451a27db54911fe38cfda287fbf537eb15878666db89
+2023-03-22 18:59:59,exe,,741888,AgentTesla,deb6aedd0f43684c17b79ed15ce83535a06783b817f029a1507ff3dfea0e403c
+2023-03-22 18:59:45,exe,,352638,SnakeKeylogger,d9c35851a578222df21273255d16f3fc4d6ccbf3b6120bf7e1fe1ecbfb534b8f
+2023-03-22 18:59:39,exe,,1076736,AgentTesla,d89998b7e237e5376f634168ec651eafe1dd40e3eb0470fe6350559fa4c78e23
+2023-03-22 18:59:14,exe,,1075712,AgentTesla,62db734242a6e88699be7e406b7266d2abe295c068834966e487cb8052f76fa8
+2023-03-22 18:58:44,exe,,1076736,AgentTesla,599150d2aa3876bf95fcfbf1a8467f52781caff71ab9e09659f4c4120e34c027
+2023-03-22 18:58:39,exe,,1077248,AgentTesla,f4e6a61d2e8cd7651788e61c8b5c9fb36df48373adec1b1e875ff10adca28b90
+2023-03-22 18:58:20,doc,,1880338,Formbook,d6f3694d7c009f73f53fa28d77a65eafd3ae19c9d219982a71f150c514a86584
+2023-03-22 18:57:52,exe,,313482,AZORult,04ba3baec724f334ca46c373f3035a2e2aa98e62a64adca36ef014807dab22bc
+2023-03-22 18:52:32,html,,3809,Quakbot,26d6ebf5aed7c9578a1a6c963f67245240a6d4d54b4281c28c747b9b0e67fe5e
+2023-03-22 18:52:27,html,,4199,Quakbot,68f78f466e42d949bce2ec98e75ae1fdd34a4db3bbef194de7249a2909d34d19
+2023-03-22 18:52:21,html,,3987,Quakbot,474f1e4ca2742b8971e1eac7656738c3fe9a8730ed1acfaac030474ae66c722d
+2023-03-22 18:50:27,js,,69424,Quakbot,bbc25a40115747c5b2e9d0fe04ba868803357573b77d2e9549c76f11c8721719
+2023-03-22 18:50:22,js,,57741,Quakbot,2e784c30f066aa88803a98229e01721a956069c14c2adb8cfdc06c5150c6aeb4
+2023-03-22 18:50:16,js,,66088,,c5ccbf1ac2135bce068936ac5c596ef093d92e20cf89f6781a5ba908923c22ad
+2023-03-22 18:44:58,exe,,369152,Smoke Loader,d6b06f7b07cd71f55091d9d1c36556538dfe3fd8cd3b40bccd29d6ea123fb334
+2023-03-22 18:39:50,exe,,264272,RedLineStealer,6e19909f321fa5127cad55679312d27224b1c9b620b9db503f46a9d9e107d3b2
+2023-03-22 18:34:38,exe,,1527608,CoinMiner,267d627adc11723b2d7dc15bc8713a2f4fd34593f8bed87777fc23e5a7db391a
+2023-03-22 18:28:51,exe,,7599380,Adware.Neoreklami,b0a939a62109bf92a1768ee65443a0936e0f401a00b87f29ee66203b082726c4
+2023-03-22 18:23:32,exe,,476672,RedLineStealer,6fb609b7600b0a5554e4d8e93f48cfc7ef7d7bccd99fb4cf508ca96e0e86f2f3
+2023-03-22 18:20:40,elf,,90036,Mirai,287517b32dfb5c55841c4243bf42f58d29d6e759f1d910a5e8edfefbaf6eebfd
+2023-03-22 18:20:17,elf,,54144,Mirai,67636fe25841328bd940f41315246fa1832725b8e8076c455c003f2b9761bac1
+2023-03-22 18:18:17,exe,,367104,Tofsee,737c79bc5d2ca593911b1c8c5ae66908d2de7beee8dd2388bcd57a008e5169e6
+2023-03-22 18:13:11,exe,,368640,,1cabbdefd3f0141e06d0ff0035842f72d510fc01082c8fb8364292a63ad760ce
+2023-03-22 18:07:57,exe,,1031168,RedLineStealer,932958a2b1dcd14c4e5eaa195a4ec9b749b1dd05435616271c921c9eadf16d96
+2023-03-22 18:06:35,js,IT,50492,Quakbot,cdf04ce70a7d1303b77cfa25eae0d0e9b114bdec69c15774bfb6745319dfda6d
+2023-03-22 18:05:37,exe,IT,367104,Gozi,d5ad49b4519f7c8d63ac988b81d615ab12a4d5bc64a691681ae6161b141a37e1
+2023-03-22 18:02:48,exe,,367104,Smoke Loader,2e5e08697e7c2c8777eb1872adc9ec7f36a04c9b41593d2d820c870dcd51d64a
+2023-03-22 18:00:54,exe,,551424,RedLineStealer,e27f343d59451541202e9e87a12b98b7a6d8ff1f2031a014198b6312e6e8c5ac
+2023-03-22 18:00:52,exe,,1029120,Amadey,aaaff5c19dee1617fec4dd0815fb8568f95e8cbb2a8e12aac679439b76efaf7a
+2023-03-22 18:00:50,exe,,550912,RedLineStealer,ee47bfacb2c4b799439414b5a67e3c9222e3d5ed9cf003d45212cd90c7a70f95
+2023-03-22 17:59:12,zip,IT,479,Gozi,da0c185245dfd3703d3af4b0a7e4f7ee5553c47eb2ef42b3864ba585e73f5dd8
+2023-03-22 17:57:39,exe,,476672,RedLineStealer,2cd35298eaed2a4d778fdcd72458e6cd6be0f65ef57cbc852f3be318e6613a27
+2023-03-22 17:56:46,zip,IT,509,Gozi,026c052e20f87a3b6f757184c8739611bf721bc746a94d2afe2814225d0a8a81
