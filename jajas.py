@@ -43,7 +43,6 @@ for row in csvreader:
     sha256_list.append(str(row[5]))
 
 del(sha256_list[0])
-print(sha256_list)
 ayuda = []
 invento = [] 
 for shash in sha256_list:
@@ -51,14 +50,19 @@ for shash in sha256_list:
     invento.append(data_sha)
     
 for every in invento:
-    response_sha = requests.post(url, data = every , timeout=15, headers=headers, allow_redirects=True)
+    response_sha = requests.post(url, data=every, timeout=15, headers=headers, allow_redirects=True)
     response_json = response_sha.json()["data"][0]
     delivery_method = response_json.get("delivery_method")
     ayuda.append(delivery_method)
 
 for x in ayuda:
     print(x)
-
+csvheader_sha = ["DELIVERY METHOD"]
+with open('detections_sha.csv','w',encoding='UTF8', newline='') as c: 
+    writter = csv.writer(c)
+    writter.writerow(csvheader_sha)
+    for item in ayuda:
+         writter.writerow([item])
 """
 df= pd.read_csv('detections.csv')
 st.dataframe(df)
