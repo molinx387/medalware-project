@@ -63,6 +63,13 @@ with open('detections_sha.csv','w',encoding='UTF8', newline='') as c:
     writter.writerow(csvheader_sha)
     for item in ayuda:
          writter.writerow([item])
+
+df1 = pd.read_csv('detections.csv')
+df2 = pd.read_csv('detections_sha.csv')
+
+concatenated = pd.concat([df1, df2], axis=1, ignore_index=False)
+
+concatenated.to_csv('detections_data.csv', index=False)
 """
 df= pd.read_csv('detections.csv')
 st.dataframe(df)
