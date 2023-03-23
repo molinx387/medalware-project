@@ -55,7 +55,7 @@ for every in invento:
     delivery_method = response_json.get("delivery_method")
     ayuda.append(delivery_method)
 
-for x in ayuda:
+
 csvheader_sha = ["DELIVERY METHOD"]
 with open('detections_sha.csv','w',encoding='UTF8', newline='') as c: 
     writter = csv.writer(c)
