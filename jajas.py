@@ -53,19 +53,20 @@ for every in invento:
     response_sha = requests.post(url, data=every, timeout=15, headers=headers, allow_redirects=True)
     if response_sha.json()["query_status"] == 'hash_not_found':
         print('>>>>>>>>>>  The sample hash was not found on Malbazaar  <<<<<<<<<<')
-        delivery_method = "NO EXISTE"
-        ayuda.append(delivery_method)
+        listing_sha = "NO EXISTE"
+        ayuda.append(listing_sha)
     else:
-        response_json = response_sha.json()["data"][0]
-        delivery_method = response_json.get("delivery_method")
-        ayuda.append(delivery_method)
+        response_json = response_sha.json()
+        for sha_data in response_json["data"]:
+            listing_sha = [sha_data['delivery_method'], sha_data['yara_rules'], sha_data['vendor_intel'] ]
+            ayuda.append(listing_sha)
 
-csvheader_sha = ["DELIVERY METHOD"]
+
+csvheader_sha = ["DELIVERY METHOD", "YARA RULES", "VENDOR INTEL"]
 with open('detections_sha.csv','w',encoding='UTF8', newline='') as c: 
     writter = csv.writer(c)
     writter.writerow(csvheader_sha)
-    for item in ayuda:
-         writter.writerow([item])
+    writter.writerows(ayuda) 
 
 df1 = pd.read_csv('detections.csv')
 df2 = pd.read_csv('detections_sha.csv')
