@@ -51,16 +51,15 @@ for shash in sha256_list:
     
 for every in invento:
     response_sha = requests.post(url, data=every, timeout=15, headers=headers, allow_redirects=True)
-    if response_sha.json()["query_status"] == 'hash_not_found':
-        print('>>>>>>>>>>  The sample hash was not found on Malbazaar  <<<<<<<<<<')
-        delivery_method = "NO EXISTE"
-        ayuda.append(delivery_method)
-    else:
-        response_json = response_sha.json()["data"][0]
-        delivery_method = response_json.get("delivery_method")
-        ayuda.append(delivery_method)
+    response_json = response_sha.json()["data"][0]
+    for element in response_json:
+        listed_element =[element[response_json.get("delivery_method")],
+                                  element[response_json.get("yara_rules")],
+                                  element[response_json.get("vendor_intel")]]
+    ayuda.append(listed_element)
 
-csvheader_sha = ["DELIVERY METHOD"]
+
+csvheader_sha = ["DELIVERY METHOD","YARA RULES","VENDOR INTEL"]
 with open('detections_sha.csv','w',encoding='UTF8', newline='') as c: 
     writter = csv.writer(c)
     writter.writerow(csvheader_sha)
@@ -81,4 +80,5 @@ st.bar_chart(data=df, x='COUNTRY', y='SIZE', width=1000, height=250, use_contain
 #st.line_chart(data=df, x='TAGS', y='SIZE', width=100, height=500, use_container_width=True)
 # st.area_chart(data=df, x='TAGS', y='SIZE', width=5000, height=5000, use_container_width=True)
 """
+
 
