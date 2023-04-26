@@ -1,10 +1,15 @@
+import os
 import requests
 import pandas as pd
+from dotenv import load_dotenv, find_dotenv
+
+
+load_dotenv(find_dotenv())
 
 
 def recent_malware():
     url = "https://mb-api.abuse.ch/api/v1/"
-    headers = {"API-KEY": "5f93b4ae1962f1fb2c5f67735401f6f3"}W
+    headers = {"API-KEY": os.environ["API_KEY"]}
     data = {"query": "get_recent", "selector": "100"}
     malware_data = list()
 
