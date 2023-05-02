@@ -21,8 +21,7 @@ def recent_malware():
         malware_sha = malware["sha256_hash"]
         data_sha = {"query": "get_info", "hash": malware_sha}
         response_sha = requests.post(
-            url, data=data_sha, timeout=15,
-            headers=headers, allow_redirects=True
+            url, data=data_sha, timeout=15, headers=headers, allow_redirects=True
         )
         if response_sha.json()["query_status"] == "hash_not_found":
             print(">>>>>>  The sample hash was not found on Malbazaar <<<<<<")
@@ -46,19 +45,18 @@ def recent_malware():
     table_headers = [
         "SHA256",
         "Familia",
-        "Tipo Archivo",
-        "cantidad",
+        "Extension",
+        "Peso (MB)",
         "Metodo de Entrega",
         "Origen",
         "Fecha",
-        "REGLAS YARA",
-        "INFORMES EXTERNOS",
+        "Reglas YARA",
+        "Informes externos",
     ]
-
     df = pd.DataFrame(malware_data, columns=table_headers)
-    df.to_csv('./example.csv')
+    df.to_csv("src/data/example.csv")
     return df
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     recent_malware()
