@@ -3,6 +3,12 @@ import time
 import pandas as pd
 import streamlit as st
 
+import plotly.express as px
+import plotly.graph_objects as go
+
+
+
+
 st.title(" 🧑‍💻 _MEDALWARE PROJECT_")
 st.text(
     """
@@ -10,13 +16,38 @@ st.text(
 para estudios de seguridad informatica completamente en español!
 """
 )
-df = pd.read_csv("../data/cleaned.csv")
-mascabron = df["Familia"].value_counts().idxmax()
-st.header(f"Malware mas concurrente de hoy, [{mascabron}](https://bazaar.abuse.ch/)")
 
-progress_text = "Operation in progress. Please wait."
-my_bar = st.progress(0, text=progress_text)
+values = [['SHA256', 'Familia', 'Extension', 'Peso (MB)', 'Metodo de Entrega', 'Origen','Fecha'], #1st col
+  ["Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
+  "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
+  "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
+  "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
+  "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
+  "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
+  "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad"]]
 
-for percent_complete in range(100):
-    time.sleep(0.1)
-    my_bar.progress(percent_complete + 1, text=progress_text)
+
+fig = go.Figure(data=[go.Table(
+  columnorder = [1,2],
+  columnwidth = [80,400],
+  header = dict(
+    values = [['<b>DATOS</b><br>'],
+                  ['<b>DESCRIPTION</b>']],
+    line_color='white',
+    fill_color='#0D1017',
+    align=['left','center'],
+    font=dict(color='white', size=12),
+    height=40
+  ),
+  cells=dict(
+    values=values,
+    line_color='white',
+    fill=dict(color=['#0D1017', '#0D1017']),
+    align=['left', 'center'],
+    font_size=12,
+    height=30)
+    )
+])
+
+st.write(fig)
+
