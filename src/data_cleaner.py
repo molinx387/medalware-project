@@ -10,12 +10,8 @@ def cleaner():
     df.drop("Fecha", axis=1, inplace=True)
     df["Metodo de Entrega"].fillna("Desconocido", inplace=True)
     df.dropna(inplace=True)
-    # df.reset_index(inplace=True)
-
-    
+    df.reset_index(drop=True, inplace=True)
     df.to_csv("src/data/cleaned.csv")
     return df
-
-
 if __name__ == "__main__":
     cleaner()
