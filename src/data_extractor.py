@@ -37,8 +37,8 @@ def recent_malware():
                     "delivery_method",
                     "origin_country",
                     "first_seen",
-                    "yara_rules",
-                    "vendor_intel",
+                    # "yara_rules",
+                    # "vendor_intel",
                 ]
             ]
             malware_data.append(df.values.tolist()[0])
@@ -50,8 +50,8 @@ def recent_malware():
         "Metodo de Entrega",
         "Origen",
         "Fecha",
-        "Reglas YARA",
-        "Informes externos",
+        # "Reglas YARA",
+        # "Informes externos",
     ]
     df = pd.DataFrame(malware_data, columns=table_headers)
     df.to_csv("src/data/example.csv")
