@@ -13,5 +13,7 @@ def cleaner():
     df.reset_index(drop=True, inplace=True)
     df.to_csv("src/data/cleaned.csv")
     return df
+
+
 if __name__ == "__main__":
     cleaner()
