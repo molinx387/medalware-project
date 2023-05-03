@@ -7,7 +7,7 @@ def cluster():
     df1 = cleaner()
     # df2 = pd.read_csv("src/data/malwares.csv")
     if os.path.isfile(os.path.join("./data/", "malwares.csv")):
-        f2 = pd.read_csv("src/data/malwares.csv")
+        df2 = pd.read_csv("src/data/malwares.csv")
         for index, row in df1.iterrows():
             if not df2.isin(row).any().any():
                 df2 = df2.append(row)
