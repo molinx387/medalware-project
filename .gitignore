@@ -132,7 +132,7 @@ dmypy.json
 # Media
 media/
 csv/
-*.csv
+# *.csv
 
 # VSCODE
 .vscode/
