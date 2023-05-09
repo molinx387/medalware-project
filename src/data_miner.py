@@ -14,12 +14,12 @@ def data_extractor():
     data = {"query": "get_recent", "selector": "100"}
     malware_data = list()
     session = requests.Session()
-    retries = Retry(total=5, backoff_factor=1, status_forcelist=[ 500, 502, 503, 504 ])
-    session.mount('https://', HTTPAdapter(max_retries=retries))
+    retries = Retry(total=5, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
+    session.mount("https://", HTTPAdapter(max_retries=retries))
     malwares = requests.post(
         url, data=data, timeout=15, headers=headers, allow_redirects=True
     ).json()
-    print('PRIMER FLAG')
+    print("PRIMER FLAG")
     for malware in malwares["data"]:
         malware_sha = malware["sha256_hash"]
         data_sha = {"query": "get_info", "hash": malware_sha}
@@ -29,7 +29,7 @@ def data_extractor():
         if response_sha.json()["query_status"] == "hash_not_found":
             print(">>>>>>  The sample hash was not found on Malbazaar <<<<<<")
         else:
-            print('hola')
+            print("hola")
             response_json = response_sha.json()
             df = pd.DataFrame(response_json["data"])
             df = df[
@@ -54,7 +54,6 @@ def data_extractor():
         "Fecha",
     ]
     df = pd.DataFrame(malware_data, columns=table_headers)
-    # df.to_csv("src/data/example.csv")
     return df
 
 
@@ -77,14 +76,12 @@ def data_cleaner(df):
     df.dropna(inplace=True)
     df = df.sort_values(by="Hora", ascending=True)
     df.reset_index(drop=True, inplace=True)
-    df.to_csv("src/data/cleaned.csv")
     return df
 
 
 def data_cluster(df):
     csv_path = "src/data/malwares.csv"
     df_recent = df
-
     if os.path.isfile(csv_path):
         print("EXISTE")
         df_stored = pd.read_csv(csv_path)
