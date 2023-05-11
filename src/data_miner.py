@@ -19,7 +19,6 @@ def data_extractor():
     malwares = requests.post(
         url, data=data, timeout=15, headers=headers, allow_redirects=True
     ).json()
-    print("PRIMER FLAG")
     for malware in malwares["data"]:
         malware_sha = malware["sha256_hash"]
         data_sha = {"query": "get_info", "hash": malware_sha}
@@ -29,7 +28,6 @@ def data_extractor():
         if response_sha.json()["query_status"] == "hash_not_found":
             print(">>>>>>  The sample hash was not found on Malbazaar <<<<<<")
         else:
-            print("hola")
             response_json = response_sha.json()
             df = pd.DataFrame(response_json["data"])
             df = df[
@@ -83,14 +81,12 @@ def data_cluster(df):
     csv_path = "src/data/malwares.csv"
     df_recent = df
     if os.path.isfile(csv_path):
-        print("EXISTE")
         df_stored = pd.read_csv(csv_path)
         df_result = pd.concat(
             [df_stored, df_recent], ignore_index=True
         ).drop_duplicates(subset=["SHA256"])
         df_result.to_csv(csv_path, index=False)
     else:
-        print("NO EXISTE")
         df_stored = df_recent
         df_stored.to_csv(csv_path, index=False)
 
