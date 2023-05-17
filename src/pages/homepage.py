@@ -13,8 +13,7 @@ class home_malware(HydraHeadApp):
         st.title(" 🧑‍💻 _MEDALWARE PROJECT_")
         st.text(
             """
-        ¡Una aplicación web de analisis de datos de muestras de malware 
-        para estudios de seguridad informatica completamente en español!
+        ¡Una aplicación web de analisis de datos de muestras de malware para estudios de seguridad informatica completamente en español!
         """
         )
 
