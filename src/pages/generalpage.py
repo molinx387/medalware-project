@@ -47,12 +47,22 @@ class general_malware(HydraHeadApp):
         fig1 = go.Figure(
             data=[go.Pie(labels=data_grouped_metodo.index, values=data_grouped_metodo.values)]
         )
+ 
+        # Personalizar Colores de las gráficas de torta
+        colors = px.colors.qualitative.G10
 
         # Personalizar el diseño del gráfico de torta para método de entrega
+        fig1.update_traces(
+            textposition='inside', 
+            textinfo='percent+label',
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors , width=2))
+        )
+
         fig1.update_layout(
             title="Método de Entrega",
-            width=300,
-            height=300,
+            width=400,
+            height=400,
             margin=dict(l=10, r=10, t=30, b=10),
         )
 
@@ -69,12 +79,21 @@ class general_malware(HydraHeadApp):
         )
 
         # Personalizar el diseño del gráfico de torta para extensión
+        fig2.update_traces(
+            textposition='inside', 
+            textinfo='percent+label',
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors , width=2))
+        )
         fig2.update_layout(
-            title="Extensión", width=300, height=300, margin=dict(l=10, r=10, t=30, b=10)
+            title="Extensión", 
+            width=400, 
+            height=400, 
+            margin=dict(l=10, r=10, t=30, b=10)
         )
 
         # Crear la primera columna con los dos gráficos de torta
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns([3, 2])
         with col1:
             st.plotly_chart(fig1)
             st.plotly_chart(fig2)
@@ -88,10 +107,16 @@ class general_malware(HydraHeadApp):
         )
 
         # Personalizar el diseño del gráfico de torta para método de entrega
+        fig3.update_traces(
+            textposition='inside', 
+            textinfo='percent+label',
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors , width=2))
+        )
         fig3.update_layout(
             title="Familia de Malware",
-            width=300,
-            height=300,
+            width=400,
+            height=400,
             margin=dict(l=10, r=10, t=30, b=10),
         )
 
@@ -108,8 +133,17 @@ class general_malware(HydraHeadApp):
         )
 
         # Personalizar el diseño del gráfico de torta para origen
+        fig4.update_traces(
+            textposition='inside', 
+            textinfo='percent+label',
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors , width=2))
+        )
         fig4.update_layout(
-            title="Origen", width=300, height=300, margin=dict(l=10, r=10, t=30, b=10)
+            title="Origen", 
+            width=400, 
+            height=400, 
+            margin=dict(l=10, r=10, t=30, b=10)
         )
 
         # Crear la segunda columna con los dos gráficos de torta
