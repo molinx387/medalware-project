@@ -178,3 +178,57 @@ class general_malware(HydraHeadApp):
                     ]
                 ]
             )
+
+
+
+        # Definir los países y sus respectivas ubicaciones geográficas
+        paises = {
+            'FR': {'iso_alpha': 'FRA'},
+            'NL': {'iso_alpha': 'NLD'},
+            'US': {'iso_alpha': 'USA'},
+            'CH': {'iso_alpha': 'CHE'},
+            'DK': {'iso_alpha': 'DNK'},
+            'DE': {'iso_alpha': 'DEU'},
+            'BR': {'iso_alpha': 'BRA'},
+            'RU': {'iso_alpha': 'RUS'},
+            'GB': {'iso_alpha': 'GBR'},
+            'IT': {'iso_alpha': 'ITA'},
+            'TH': {'iso_alpha': 'THA'},
+            'JP': {'iso_alpha': 'JPN'}
+        }
+
+        # Crear el DataFrame con los datos de cantidad por origen
+        data = pd.DataFrame({'iso_alpha': [paises[origen]['iso_alpha'] for origen in data_grouped_extension.index],
+                            'cantidad': data_grouped_extension.values})
+
+        # Crear el gráfico de mapa coroplético interactivo
+        fig5 = px.choropleth(data_frame=data, locations='iso_alpha', locationmode='ISO-3',
+                            color='cantidad', color_continuous_scale='Viridis',
+                            labels={'cantidad': 'Cantidad'},
+                            title='Distribución de Origen',
+                            projection='orthographic')
+
+        fig5.update_geos(showland=True, showocean=True, showcountries=True, showframe=True,
+                landcolor='white', oceancolor='white', bgcolor='rgba(0,0,0,0)')
+        
+        fig5.update_layout(
+        width=800,
+        height=600
+        )
+
+        # Mostrar el gráfico en Streamlit
+        mapa_malwares = st.container()
+        with mapa_malwares:
+            st.subheader("Mapa de Malwares")
+            col1, col2, col3 = st.columns([0.1, 4, 0.1])
+            col2.plotly_chart(fig5, use_container_width=True)
+
+
+"""Your app is having trouble loading the hydralit_components.NavBar.nav_bar component.
+
+(The app is attempting to load the component from ****, and hasn't received its "streamlit
+" message.)
+
+If this is a development build, have you started the dev server?
+If this is a release build, have you compiled the frontend?
+For more troubleshooting help, please see the Streamlit Component docs or visit our forums."""
