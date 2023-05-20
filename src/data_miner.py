@@ -4,6 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv, find_dotenv
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
+import pycountry
 
 load_dotenv(find_dotenv())
 
@@ -71,7 +72,9 @@ def data_cleaner(df):
             "multiple": "multiple",
         }
     )
-    df.dropna(inplace=True)
+    df.dropna(inplace=True)    
+    alpha_country = {country.alpha_2: country.alpha_3 for country in pycountry.countries}
+    df['Origen'] = df['Origen'].map(alpha_country)
     df = df.sort_values(by="Hora", ascending=True)
     df.reset_index(drop=True, inplace=True)
     return df
