@@ -8,14 +8,17 @@ import plotly.graph_objects as go
 import hydralit as hy
 from hydralit import HydraHeadApp
 
+
 class home_malware(HydraHeadApp):
     def run(self):
-        st.title(" 🧑‍💻 _MEDALWARE PROJECT_")
-        st.text(
+        medalware_proyect = st.container()
+        with medalware_proyect:
+            st.title(" 🧑‍💻 _MEDALWARE PROJECT_")
+            st.text(
+                """
+            ¡Una aplicación web de analisis de datos de muestras de malware para estudios de seguridad informatica completamente en español!
             """
-        ¡Una aplicación web de analisis de datos de muestras de malware para estudios de seguridad informatica completamente en español!
-        """
-        )
+            )
 
         values = [
             [
@@ -37,7 +40,6 @@ class home_malware(HydraHeadApp):
                 "Lorem ipsum dolor sit amet, tollit discere inermis pri ut. Eos ea iusto timeam, an prima laboramus vim. Id usu aeterno adversarium, summo mollis timeam vel ad",
             ],
         ]
-
 
         fig = go.Figure(
             data=[
@@ -63,5 +65,8 @@ class home_malware(HydraHeadApp):
                 )
             ]
         )
-
-        st.write(fig)
+        datos_medalware = st.container()
+        with datos_medalware:
+            st.subheader("Tabla de Datos")
+            col1, col2, col3 = st.columns([0.1, 4, 0.1])
+            col2.write(fig)
