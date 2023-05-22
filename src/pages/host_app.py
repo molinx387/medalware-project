@@ -1,15 +1,18 @@
 from hydralit import HydraApp
+from hydralit_components import NavBar
 import streamlit as st
 from homepage import home_malware
 from generalpage import general_malware
 from malwarefamily import f_malware
 
 if __name__ == "__main__":
+
+
     # this is the host application, we add children to it and that's it!
     app = HydraApp(
         title="MEDALWARE",
         favicon="🧑‍💻",
-        hide_streamlit_markers=True,
+        hide_streamlit_markers=False ,
         use_navbar=True,
         navbar_sticky=True,
     )
