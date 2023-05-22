@@ -23,11 +23,14 @@ class home_malware(HydraHeadApp):
             
             
             st.markdown(
-                """
-            MEDALWARE  es una aplicacion web de analisis exploratorio de datos de muestras de malware completamente en español, 
-            que procesa datos de malware recientes del sitio [MalwareBaazar](https://bazaar.abuse.ch/), para extraer 
-            de ellos y en tiempo real informacion relevante, a traves de distintos graficos y analisis. Con Medalware, se puede llevar un seguimiento 
-            de las tendencias de este tipo de software a nivel mundial, en aspectos como:
-            Metodos de distribucion, Extensiones de archivos, Familias, Origenes conocidos, entre otros.
-                """
-            )
+            """
+            <div style="text-align: justify">
+                MEDALWARE es una aplicación web de análisis exploratorio de datos de muestras de malware completamente en español, 
+                que procesa datos de malware recientes del sitio <a href="https://bazaar.abuse.ch/">MalwareBaazar</a>, para extraer 
+                de ellos y en tiempo real información relevante, a través de distintos gráficos y análisis. Con Medalware, se puede llevar un seguimiento 
+                de las tendencias de este tipo de software a nivel mundial, en aspectos como:
+                Métodos de distribución, Extensiones de archivos, Familias, Orígenes conocidos, entre otros.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
