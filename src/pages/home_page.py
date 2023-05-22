@@ -22,7 +22,7 @@ class home_malware(HydraHeadApp):
             #("<h3 style='text-align: center;'> 'Una web de analisis explotario de datos de malware'</h3>", unsafe_allow_html=True)
             
             
-            st.markdown(
+            col2.markdown(
             """
             <div style="text-align: justify">
                 MEDALWARE es una aplicación web de análisis exploratorio de datos de muestras de malware completamente en español, 
