@@ -18,32 +18,32 @@ class general_malware(HydraHeadApp):
                 f"Malware mas concurrente de hoy, [{mascabron}](https://bazaar.abuse.ch/)"
             )
 
-            # Convertir la columna de fecha en formato datetime
-            data["Dia"] = pd.to_datetime(data["Dia"])
+        # Convertir la columna de fecha en formato datetime
+        data["Dia"] = pd.to_datetime(data["Dia"])
 
-            # Agrupar por día y contar la cantidad de filas
-            data_grouped = (
-                data.groupby(data["Dia"].dt.date).size().reset_index(name="cantidad")
+         # Agrupar por día y contar la cantidad de filas
+        data_grouped = (
+            data.groupby(data["Dia"].dt.date).size().reset_index(name="cantidad")
             )
 
-            # Crear el gráfico de área con Plotly Express
-            fig = px.area(data_grouped, x="Dia", y="cantidad")
+        # Crear el gráfico de área con Plotly Express
+        fig = px.area(data_grouped, x="Dia", y="cantidad")
 
-            # Personalizar el diseño del gráfico de área
-            fig.update_layout(
-                title="Cantidad de Malware por Día",
-                xaxis_title="Fecha",
-                yaxis_title="Cantidad de Malware",
+        # Personalizar el diseño del gráfico de área
+        fig.update_layout(
+            title="Cantidad de Malware por Día",
+            xaxis_title="Fecha",
+            yaxis_title="Cantidad de Malware",
             )
 
         # Mostrar el gráfico en Streamlit
         histograma_malwares = st.container()
         with histograma_malwares:
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
-            col2.plotly_chart(fig, use_container_width=True, width=800, height=400)
+            col2.plotly_chart(fig, config = {'displaylogo': False}, use_container_width=True, width=800, height=400)
 
         # Contar la cantidad de filas para cada método de entrega
-        data_grouped_metodo = data["Metodo de Entrega"].value_counts()
+        data_grouped_metodo = data["Metodo de Entrega"].value_counts().head(6)
 
         # Crear el gráfico de torta para método de entrega con plotly.graph_objects
         fig1 = go.Figure(
@@ -73,7 +73,7 @@ class general_malware(HydraHeadApp):
         )
 
         # Contar la cantidad de filas para cada extensión
-        data_grouped_extension = data["Extension"].value_counts()
+        data_grouped_extension = data["Extension"].value_counts().head(6)
 
         # Crear el gráfico de torta para extensión con plotly.graph_objects
         fig2 = go.Figure(
@@ -102,11 +102,11 @@ class general_malware(HydraHeadApp):
         # Crear la primera columna con los dos gráficos de torta
         col1, col2 = st.columns([3, 2])
         with col1:
-            st.plotly_chart(fig1)
-            st.plotly_chart(fig2)
+            st.plotly_chart(fig1, config = {'displayModeBar': False})
+            st.plotly_chart(fig2, config = {'displayModeBar': False})
 
         # Contar la cantidad de filas para cada método de familia
-        data_grouped_metodo = data["Familia"].value_counts()
+        data_grouped_metodo = data["Familia"].value_counts().head(6)
 
         # Crear el gráfico de torta para método de entrega con plotly.graph_objects
         fig3 = go.Figure(
@@ -132,14 +132,17 @@ class general_malware(HydraHeadApp):
         )
 
         # Contar la cantidad de filas para cada origen
-        data_grouped_extension = data["Origen"].value_counts()
+        data_grouped_extension_origen = data["Origen"].value_counts()
+
+        # Tomar solo los primeros 6 datos
+        data_grouped_extension_origen  = data_grouped_extension_origen .head(6)
 
         # Crear el gráfico de torta para extensión con plotly.graph_objects
         fig4 = go.Figure(
             data=[
                 go.Pie(
-                    labels=data_grouped_extension.index,
-                    values=data_grouped_extension.values,
+                    labels=data_grouped_extension_origen .index,
+                    values=data_grouped_extension_origen .values,
                 )
             ]
         )
@@ -157,8 +160,8 @@ class general_malware(HydraHeadApp):
 
         # Crear la segunda columna con los dos gráficos de torta
         with col2:
-            st.plotly_chart(fig3)
-            st.plotly_chart(fig4)
+            st.plotly_chart(fig3, config = {'displayModeBar': False})
+            st.plotly_chart(fig4, config = {'displayModeBar': False})
 
         tabla_malwares = st.container()
         with tabla_malwares:
@@ -179,7 +182,8 @@ class general_malware(HydraHeadApp):
                 ]
             )
 
-
+        # Contar la cantidad de filas para cada origen del mapa
+        data_grouped_extension= data["Origen"].value_counts()
 
         # Crear el DataFrame con los datos de cantidad por origen
         data = pd.DataFrame({'iso_alpha': data_grouped_extension.index,
@@ -205,4 +209,4 @@ class general_malware(HydraHeadApp):
         with mapa_malwares:
             st.subheader("Mapa de Malwares")
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
-            col2.plotly_chart(fig5, use_container_width=True)
+            col2.plotly_chart(fig5, config = {'displaylogo': False}, use_container_width=True)
