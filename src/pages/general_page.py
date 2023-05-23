@@ -183,14 +183,19 @@ class general_malware(HydraHeadApp):
             st.plotly_chart(fig4, config = {'displayModeBar': False})
 
         with col2:
-            st.title(f" 📑 REPORTE DEL {start_date} AL {end_date}")
+            st.title(f"📑 ANÁLISIS GENERAL {start_date} AL {end_date}")
             st.markdown(f"""
             <div style="text-align: justify">
-            Desde el {start_date} hasta el {end_date} Medalware ha
-            registrado alrededor de 
-                pass
+            <h4>Desde el {start_date} hasta el {end_date} Medalware ha
+            recopilado, limpiado y analizado los datos de alrededor
+            de {filtered_data.shape[0]} nuevos malwares,
+            de los que se ha podido extraer la siguiente informacion:
+            
+            <h4>El tipo de malware mas concurrente a la fecha es el malware:
+            {filtered_data["Familia"].value_counts().idxmax()} 👾,  
+           
+            <h4> La mayoria nde malware mas concurrente a la fecha es el malware
             """,unsafe_allow_html=True)    
-
 
 
 
