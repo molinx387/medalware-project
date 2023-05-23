@@ -130,7 +130,7 @@ dmypy.json
 .pyre/
 
 # Media
-media/
+# media/
 csv/
 # *.csv
 

@@ -12,11 +12,33 @@ class general_malware(HydraHeadApp):
         data = pd.read_csv("src/data/malwares.csv")
         titel_general = st.container()
         with titel_general:
-            st.title("PAGINA GENERAL")
-            mascabron = data["Familia"].value_counts().idxmax()
-            st.header(
-                f"Malware mas concurrente de hoy, [{mascabron}](https://bazaar.abuse.ch/)"
-            )
+            col1,col2 = st.columns([4,6])
+            col1.title("🔖  ANÁLISIS GENERALES ")
+            col1.markdown(
+            """
+            <div style="text-align: justify">
+            En este apartado se encuentran análisis de datos generales\n sobre todos los registros de datos de Medalware.
+            </div>
+            """,
+            unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            # mascabron = data["Familia"].value_counts().idxmax()
+            # st.header(
+                # f"Malware mas concurrente de hoy, [{mascabron}](https://bazaar.abuse.ch/)"
+            # )
 
         # Convertir la columna de fecha en formato datetime
         data["Dia"] = pd.to_datetime(data["Dia"])
