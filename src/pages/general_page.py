@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import hydralit as hy
 from hydralit import HydraHeadApp
-
+from streamlit_extras.mandatory_date_range import date_range_picker
 
 class general_malware(HydraHeadApp):
     def run(self):
@@ -39,14 +39,19 @@ class general_malware(HydraHeadApp):
             # st.header(
                 # f"Malware mas concurrente de hoy, [{mascabron}](https://bazaar.abuse.ch/)"
             # )
-
+        
         # Convertir la columna de fecha en formato datetime
         data["Dia"] = pd.to_datetime(data["Dia"])
 
-         # Agrupar por día y contar la cantidad de filas
+        date_range = date_range_picker("Select a date range")
+        start_date = pd.to_datetime(date_range[0]).date()
+        end_date = pd.to_datetime(date_range[1]).date()
+
+        filtered_data = data[(data["Dia"].dt.date >= start_date) & (data["Dia"].dt.date <= end_date)]
+
         data_grouped = (
-            data.groupby(data["Dia"].dt.date).size().reset_index(name="cantidad")
-            )
+            filtered_data.groupby(filtered_data["Dia"].dt.date).size().reset_index(name="cantidad")
+        )
 
         # Crear el gráfico de área con Plotly Express
         fig = px.area(data_grouped, x="Dia", y="cantidad")
@@ -64,8 +69,11 @@ class general_malware(HydraHeadApp):
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
             col2.plotly_chart(fig, config = {'displaylogo': False}, use_container_width=True, width=800, height=400)
 
+        # Personalizar Colores de las gráficas de torta
+        colors = px.colors.qualitative.G10
+
         # Contar la cantidad de filas para cada método de entrega
-        data_grouped_metodo = data["Metodo de Entrega"].value_counts().head(6)
+        data_grouped_metodo = filtered_data["Metodo de Entrega"].value_counts().head(6)
 
         # Crear el gráfico de torta para método de entrega con plotly.graph_objects
         fig1 = go.Figure(
@@ -76,8 +84,6 @@ class general_malware(HydraHeadApp):
             ]
         )
 
-        # Personalizar Colores de las gráficas de torta
-        colors = px.colors.qualitative.G10
 
         # Personalizar el diseño del gráfico de torta para método de entrega
         fig1.update_traces(
@@ -95,7 +101,7 @@ class general_malware(HydraHeadApp):
         )
 
         # Contar la cantidad de filas para cada extensión
-        data_grouped_extension = data["Extension"].value_counts().head(6)
+        data_grouped_extension = filtered_data["Extension"].value_counts().head(6)
 
         # Crear el gráfico de torta para extensión con plotly.graph_objects
         fig2 = go.Figure(
@@ -128,7 +134,7 @@ class general_malware(HydraHeadApp):
             st.plotly_chart(fig2, config = {'displayModeBar': False})
 
         # Contar la cantidad de filas para cada método de familia
-        data_grouped_metodo = data["Familia"].value_counts().head(6)
+        data_grouped_metodo = filtered_data["Familia"].value_counts().head(6)
 
         # Crear el gráfico de torta para método de entrega con plotly.graph_objects
         fig3 = go.Figure(
@@ -154,7 +160,7 @@ class general_malware(HydraHeadApp):
         )
 
         # Contar la cantidad de filas para cada origen
-        data_grouped_extension_origen = data["Origen"].value_counts()
+        data_grouped_extension_origen = filtered_data["Origen"].value_counts()
 
         # Tomar solo los primeros 6 datos
         data_grouped_extension_origen  = data_grouped_extension_origen .head(6)
@@ -190,7 +196,7 @@ class general_malware(HydraHeadApp):
             st.subheader("Tabla de Malwares")
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
             col2.write(
-                data[
+            filtered_data[
                     [
                         "SHA256",
                         "Familia",
@@ -205,7 +211,7 @@ class general_malware(HydraHeadApp):
             )
 
         # Contar la cantidad de filas para cada origen del mapa
-        data_grouped_extension= data["Origen"].value_counts()
+        data_grouped_extension= filtered_data["Origen"].value_counts()
 
         # Crear el DataFrame con los datos de cantidad por origen
         data = pd.DataFrame({'iso_alpha': data_grouped_extension.index,
