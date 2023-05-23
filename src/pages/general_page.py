@@ -51,6 +51,7 @@ class general_malware(HydraHeadApp):
             xaxis_title="Fecha",
             yaxis_title="Numero de Malwares",
             )
+            
         # Mostrar el gráfico en Streamlit
         histograma_malwares = col2.container()
         with histograma_malwares:
@@ -100,6 +101,8 @@ class general_malware(HydraHeadApp):
                 )
             ]
         )
+        total_datos = data_grouped_extension.sum()
+        porcentajes = data_grouped_extension / total_datos * 100
 
         # Personalizar el diseño del gráfico de torta para extensión
         fig2.update_traces(
@@ -194,7 +197,7 @@ class general_malware(HydraHeadApp):
             <h4>El tipo de malware mas concurrente a la fecha es el malware:
             {filtered_data["Familia"].value_counts().idxmax()} 👾,  
            
-            <h4> La mayoria nde malware mas concurrente a la fecha es el malware
+            <h4> el {porcentajes[0].round(2)}% son {filtered_data["Extension"].value_counts().idxmax()} concurrente a  la fecha es el malware
             """,unsafe_allow_html=True)    
 
 
