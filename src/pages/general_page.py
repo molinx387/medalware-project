@@ -65,13 +65,13 @@ class general_malware(HydraHeadApp):
         title_analisis = st.container()
         with title_analisis:
             col1, col2, col3 = st.columns([1, 7, 1])
-            col2.title(f"📑 ANÁLISIS GENERAL {start_date} AL {end_date}")
+            col2.title(f"📑 ANÁLISIS GENERAL {start_date} AL {end_date}📑")
             col2.markdown(f"""
                 <div style="text-align: justify">
                 <h4>Medalware ha
                 recopilado, limpiado y analizado los datos de alrededor
                 de {filtered_data.shape[0]} nuevos malwares,
-                de los que se ha podido extraer la siguiente informacion:
+                con lo que se ha podido extraer la siguiente informacion:
 
             """,unsafe_allow_html=True)  
         # Personalizar Colores de las gráficas de torta
@@ -243,7 +243,7 @@ class general_malware(HydraHeadApp):
         st.divider() 
         tabla_malwares = st.container()
         with tabla_malwares:
-            st.subheader("Tabla de Malwares")
+            st.subheader("REGISTRO DE DATOS ")
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
             col2.write(
             filtered_data[
@@ -285,6 +285,6 @@ class general_malware(HydraHeadApp):
         # Mostrar el gráfico en Streamlit
         mapa_malwares = st.container()
         with mapa_malwares:
-            st.subheader("Mapa de Malwares")
-            col1, col2, col3 = st.columns([0.1, 4, 0.1])
+            col1, col2,col3 = st.columns([3,5, 3])
+            col2.subheader("📌ESPECTRO GLOBAL DE DATOS DE MEDALWARE📌")
             col2.plotly_chart(fig5, config = {'displaylogo': False}, use_container_width=True)
