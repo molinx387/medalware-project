@@ -62,13 +62,13 @@ class general_malware(HydraHeadApp):
         colors = px.colors.qualitative.G10
 
         # Contar la cantidad de filas para cada método de entrega
-        data_grouped_metodo = filtered_data["Metodo de Entrega"].value_counts().head(6)
+        data_grouped_metodo_entrega = filtered_data["Metodo de Entrega"].value_counts().head(6)
 
         # Crear el gráfico de torta para método de entrega con plotly.graph_objects
         fig1 = go.Figure(
             data=[
                 go.Pie(
-                    labels=data_grouped_metodo.index, values=data_grouped_metodo.values
+                    labels= data_grouped_metodo_entrega.index, values= data_grouped_metodo_entrega.values
                 )
             ]
         )
@@ -101,8 +101,6 @@ class general_malware(HydraHeadApp):
                 )
             ]
         )
-        total_datos = data_grouped_extension.sum()
-        porcentajes = data_grouped_extension / total_datos * 100
 
         # Personalizar el diseño del gráfico de torta para extensión
         fig2.update_traces(
@@ -125,13 +123,13 @@ class general_malware(HydraHeadApp):
             st.plotly_chart(fig2, config = {'displayModeBar': False})
 
         # Contar la cantidad de filas para cada método de familia
-        data_grouped_metodo = filtered_data["Familia"].value_counts().head(6)
+        data_grouped_familia = filtered_data["Familia"].value_counts().head(6)
 
         # Crear el gráfico de torta para método de entrega con plotly.graph_objects
         fig3 = go.Figure(
             data=[
                 go.Pie(
-                    labels=data_grouped_metodo.index, values=data_grouped_metodo.values
+                    labels=data_grouped_familia.index, values=data_grouped_familia.values
                 )
             ]
         )
@@ -151,17 +149,14 @@ class general_malware(HydraHeadApp):
         )
 
         # Contar la cantidad de filas para cada origen
-        data_grouped_extension_origen = filtered_data["Origen"].value_counts()
-
-        # Tomar solo los primeros 6 datos
-        data_grouped_extension_origen  = data_grouped_extension_origen .head(6)
+        data_grouped_origen = filtered_data["Origen"].value_counts().head(6)
 
         # Crear el gráfico de torta para extensión con plotly.graph_objects
         fig4 = go.Figure(
             data=[
                 go.Pie(
-                    labels=data_grouped_extension_origen .index,
-                    values=data_grouped_extension_origen .values,
+                    labels=data_grouped_origen.index,
+                    values=data_grouped_origen.values,
                 )
             ]
         )
@@ -185,6 +180,11 @@ class general_malware(HydraHeadApp):
             st.plotly_chart(fig3, config = {'displayModeBar': False})
             st.plotly_chart(fig4, config = {'displayModeBar': False})
 
+        def percentaje (data_grouped):
+            total_datos = data_grouped.sum()
+            porcentajes = data_grouped / total_datos * 100
+            return porcentajes[0].round(2)
+        
         with col2:
             st.title(f"📑 ANÁLISIS GENERAL {start_date} AL {end_date}")
             st.markdown(f"""
@@ -197,7 +197,7 @@ class general_malware(HydraHeadApp):
             <h4>El tipo de malware mas concurrente a la fecha es el malware:
             {filtered_data["Familia"].value_counts().idxmax()} 👾,  
            
-            <h4> el {porcentajes[0].round(2)}% son {filtered_data["Extension"].value_counts().idxmax()} concurrente a  la fecha es el malware
+            <h4> el concurrente a  la fecha es el malware
             """,unsafe_allow_html=True)    
 
 
@@ -224,11 +224,11 @@ class general_malware(HydraHeadApp):
             )
 
         # Contar la cantidad de filas para cada origen del mapa
-        data_grouped_extension= filtered_data["Origen"].value_counts()
+        data_grouped_mapa = filtered_data["Origen"].value_counts()
 
         # Crear el DataFrame con los datos de cantidad por origen
-        data = pd.DataFrame({'iso_alpha': data_grouped_extension.index,
-                     'cantidad': data_grouped_extension.values})
+        data = pd.DataFrame({'iso_alpha': data_grouped_mapa.index,
+                     'cantidad': data_grouped_mapa.values})
 
         # Crear el gráfico de mapa coroplético interactivo
         fig5 = px.choropleth(data_frame=data, locations='iso_alpha', locationmode='ISO-3',
