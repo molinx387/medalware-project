@@ -51,7 +51,7 @@ class general_malware(HydraHeadApp):
         # Personalizar el diseño del gráfico de área
         fig.update_layout(
             title=f"Registro de Malware Analizados desde {start_date} hasta {end_date}",
-            title_x =0.3,
+            title_x =0.1,
             xaxis_title="Fecha",
             yaxis_title="Numero de Malwares",
             )
@@ -64,9 +64,10 @@ class general_malware(HydraHeadApp):
 
         title_analisis = st.container()
         with title_analisis:
-            col1, col2, col3 = st.columns([1, 7, 1])
+            col1, col2, col3 = st.columns([1, 8, 1])
+            col4, col5, col6 = st.columns([2.2, 8, 2.2])
             col2.title(f"📑 ANÁLISIS GENERAL {start_date} AL {end_date}📑")
-            col2.markdown(f"""
+            col5.markdown(f"""
                 <div style="text-align: justify">
                 <h4>Medalware ha
                 recopilado, limpiado y analizado los datos de alrededor
@@ -88,7 +89,6 @@ class general_malware(HydraHeadApp):
                 )
             ]
         )
-
 
         # Personalizar el diseño del gráfico de torta para método de entrega
         fig1.update_traces(
@@ -196,8 +196,9 @@ class general_malware(HydraHeadApp):
             
         # Crear la columna con los dos gráficos de torta
         col1, col2 = st.columns([6, 6])
-        with col1:        
-            st.plotly_chart(fig1, config = {'displayModeBar': False})
+        with col1:     
+            pie1_1, pie1_2, pie1_3 = st.columns([2, 3, 3 ])   
+            pie1_2.plotly_chart(fig1, config = {'displayModeBar': False})
             with st.expander("🪤"):
                 
                 st.markdown(f"""
@@ -206,8 +207,8 @@ class general_malware(HydraHeadApp):
                 {percentages(data_grouped_metodo_entrega)}% sobre otros metodos convencionales.
                 """,unsafe_allow_html=True) 
                 st.divider()
-            
-            st.plotly_chart(fig3, config = {'displayModeBar': False})
+            pie3_1, pie3_2, pie3_3 = st.columns([2, 3, 3 ])
+            pie3_2.plotly_chart(fig3, config = {'displayModeBar': False})
             with st.expander("👾"):
                 
                 st.markdown(f"""
@@ -218,7 +219,8 @@ class general_malware(HydraHeadApp):
                 st.divider()
 
         with col2:
-            st.plotly_chart(fig2, config = {'displayModeBar': False})
+            pie2_1, pie2_2, pie2_3 = st.columns([2, 3, 3 ])  
+            pie2_2.plotly_chart(fig2, config = {'displayModeBar': False})
             with st.expander("⚙️"):
                 
                 st.markdown(f"""
@@ -228,7 +230,8 @@ class general_malware(HydraHeadApp):
                 """,unsafe_allow_html=True) 
                 st.divider()    
 
-            st.plotly_chart(fig4, config = {'displayModeBar': False})
+            pie4_1, pie4_2, pie4_3 = st.columns([2, 3, 3 ]) 
+            pie4_2.plotly_chart(fig4, config = {'displayModeBar': False})
             with st.expander("🌎"):
                 
                 st.markdown(f"""
@@ -285,6 +288,6 @@ class general_malware(HydraHeadApp):
         # Mostrar el gráfico en Streamlit
         mapa_malwares = st.container()
         with mapa_malwares:
-            col1, col2,col3 = st.columns([3,5, 3])
+            col1, col2,col3 = st.columns([3,7, 3])
             col2.subheader("📌ESPECTRO GLOBAL DE DATOS DE MEDALWARE📌")
             col2.plotly_chart(fig5, config = {'displaylogo': False}, use_container_width=True)
