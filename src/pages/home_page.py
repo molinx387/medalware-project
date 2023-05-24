@@ -17,6 +17,7 @@ class home_malware(HydraHeadApp):
             # col2.title("📊MEDALWARE PROJECT📊")
 
             logo = Image.open('src/media/logo.png')
+            col1.header(" 👀 👇")
             col2.image(logo)
             col2.divider()
             col2.title("📊 MEDALWARE, LA WEB DE ANÁLISIS EXPLORATORIO DE DATOS DE MALWARE")
@@ -63,4 +64,13 @@ class home_malware(HydraHeadApp):
                 col2.markdown(f' >**:red[</{item}>]** **:** {description}')
 
             col2.divider()
-            col2.header("📌NO SE QUE PONER AQUI")
+            col2.header("🎂Feliz Cumpleaños compita Jose")
+            from streamlit_extras.let_it_rain import rain
+
+            rain(
+                    emoji="🎉",
+                    font_size=60,
+                    falling_speed=4,
+                    animation_length="infinite",
+                )
+

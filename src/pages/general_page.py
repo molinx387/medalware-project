@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import hydralit as hy
 from hydralit import HydraHeadApp
 from streamlit_extras.mandatory_date_range import date_range_picker
+import pycountry
 
 def percentages(data_grouped):
     total_datos = data_grouped.sum()
@@ -61,6 +62,18 @@ class general_malware(HydraHeadApp):
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
             col2.plotly_chart(fig, config = {'displaylogo': False}, use_container_width=True, width=800, height=400)
 
+        title_analisis = st.container()
+        with title_analisis:
+            col1, col2, col3 = st.columns([1, 7, 1])
+            col2.title(f"📑 ANÁLISIS GENERAL {start_date} AL {end_date}")
+            col2.markdown(f"""
+                <div style="text-align: justify">
+                <h4>Medalware ha
+                recopilado, limpiado y analizado los datos de alrededor
+                de {filtered_data.shape[0]} nuevos malwares,
+                de los que se ha podido extraer la siguiente informacion:
+
+            """,unsafe_allow_html=True)  
         # Personalizar Colores de las gráficas de torta
         colors = px.colors.qualitative.G10
 
@@ -86,7 +99,7 @@ class general_malware(HydraHeadApp):
         )
 
         fig1.update_layout(
-            title=f"Métodos de entrega más comunes del {start_date} al {end_date}",
+            title=f"Métodos de entrega más comunes",
             width=500,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -113,18 +126,13 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig2.update_layout(
-            title=f"Extensiones usadas por malware del {start_date} al {end_date}",
+            title=f"Extensiones usadas por malware",
             width=400,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
         )
 
-        # Crear la primera columna con los dos gráficos de torta
-        col1, col2 = st.columns([4, 6])
-        with col1:
-            st.plotly_chart(fig1, config = {'displayModeBar': False})
-            st.plotly_chart(fig2, config = {'displayModeBar': False})
-
+     
         # Contar la cantidad de filas para cada método de familia
         data_grouped_familia = filtered_data["Familia"].value_counts().head(6)
 
@@ -145,7 +153,7 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig3.update_layout(
-            title=f"Top malwares de {start_date} al {end_date}",
+            title=f"Top malwares",
             width=450,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -172,47 +180,67 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig4.update_layout(
-            title=f"Paises con mayor registro de malware a la fecha",
+            title=f"Top mayor registro de malware",
             width=400,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10)
         )
-
-        # Crear la segunda columna con los dos gráficos de torta
-        with col1:
-            st.plotly_chart(fig3, config = {'displayModeBar': False})
-            st.plotly_chart(fig4, config = {'displayModeBar': False})
 
         def percentaje (data_grouped):
             total_datos = data_grouped.sum()
             porcentajes = data_grouped / total_datos * 100
             return porcentajes[0].round(2)
         
-        with col2:
-            st.title(f"📑 ANÁLISIS GENERAL {start_date} AL {end_date}")
-            st.markdown(f"""
-            <div style="text-align: justify">
-            <h4>Desde el {start_date} hasta el {end_date} Medalware ha
-            recopilado, limpiado y analizado los datos de alrededor
-            de {filtered_data.shape[0]} nuevos malwares,
-            de los que se ha podido extraer la siguiente informacion:
+        def obtener_nombre_pais(codigo_iso3):
+            return pycountry.countries.get(alpha_3=codigo_iso3).name
             
-            <h4> 👾 El malware más concurrente hasta la fecha es
-            {filtered_data["Familia"].value_counts().idxmax()},
-            que abarca un {percentages(data_grouped_familia)}% de todo el conjunto de malwares de Medalware
-            <h4> 🪤 El metodo de entrega más utilizado por los ciberdelincuentes es la
-            {filtered_data["Metodo de Entrega"].value_counts().idxmax()}, con un 
-            {percentages(data_grouped_metodo_entrega)}% sobre otros metodos convencionales.
-            <h4>⚙️ El tipo de archivo más utilizado por los ciberdelincuentes son aquellos correspondientes 
-            a la extension ".{filtered_data["Extension"].value_counts().idxmax()}" que representan un 
-            {percentages(data_grouped_extension)}% del conjunto total.
+        # Crear la columna con los dos gráficos de torta
+        col1, col2 = st.columns([6, 6])
+        with col1:        
+            st.plotly_chart(fig1, config = {'displayModeBar': False})
+            with st.expander("🪤"):
+                
+                st.markdown(f"""
+                <h4> 🪤 El metodo de entrega más utilizado por los ciberdelincuentes es la
+                {filtered_data["Metodo de Entrega"].value_counts().idxmax()}, con un 
+                {percentages(data_grouped_metodo_entrega)}% sobre otros metodos convencionales.
+                """,unsafe_allow_html=True) 
+                st.divider()
+            
+            st.plotly_chart(fig3, config = {'displayModeBar': False})
+            with st.expander("👾"):
+                
+                st.markdown(f"""
+                <h4> 👾 El malware más concurrente hasta la fecha es
+                {filtered_data["Familia"].value_counts().idxmax()},
+                que abarca un {percentages(data_grouped_familia)}% de todo el conjunto de malwares de Medalware
+                """,unsafe_allow_html=True) 
+                st.divider()
 
-            """,unsafe_allow_html=True)    
+        with col2:
+            st.plotly_chart(fig2, config = {'displayModeBar': False})
+            with st.expander("⚙️"):
+                
+                st.markdown(f"""
+                <h4>⚙️ El tipo de archivo más utilizado por los ciberdelincuentes son aquellos correspondientes 
+                a la extension ".{filtered_data["Extension"].value_counts().idxmax()}" que representan un 
+                {percentages(data_grouped_extension)}% del conjunto total.
+                """,unsafe_allow_html=True) 
+                st.divider()    
+
+            st.plotly_chart(fig4, config = {'displayModeBar': False})
+            with st.expander("🌎"):
+                
+                st.markdown(f"""
+                <h4>🌎 {obtener_nombre_pais('FRA')} destaca como el país con el mayor registro de malware, 
+                representando aproximadamente el {percentages(data_grouped_origen)}% en comparación con otras naciones.
+                """,unsafe_allow_html=True)    
+                st.divider()  
 
 
 
 
-
+        st.divider() 
         tabla_malwares = st.container()
         with tabla_malwares:
             st.subheader("Tabla de Malwares")
