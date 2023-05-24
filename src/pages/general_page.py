@@ -7,7 +7,10 @@ import hydralit as hy
 from hydralit import HydraHeadApp
 from streamlit_extras.mandatory_date_range import date_range_picker
 
-
+def percentages(data_grouped):
+    total_datos = data_grouped.sum()
+    percentage = data_grouped / total_datos * 100
+    return percentage[0].round(2)
 class general_malware(HydraHeadApp):
     def run(self):
         data = pd.read_csv("src/data/malwares.csv")
@@ -194,10 +197,16 @@ class general_malware(HydraHeadApp):
             de {filtered_data.shape[0]} nuevos malwares,
             de los que se ha podido extraer la siguiente informacion:
             
-            <h4>El tipo de malware mas concurrente a la fecha es el malware:
-            {filtered_data["Familia"].value_counts().idxmax()} 👾,  
-           
-            <h4> el concurrente a  la fecha es el malware
+            <h4> 👾 El malware más concurrente hasta la fecha es
+            {filtered_data["Familia"].value_counts().idxmax()},
+            que abarca un {percentages(data_grouped_familia)}% de todo el conjunto de malwares de Medalware
+            <h4> 🪤 El metodo de entrega más utilizado por los ciberdelincuentes es la
+            {filtered_data["Metodo de Entrega"].value_counts().idxmax()}, con un 
+            {percentages(data_grouped_metodo_entrega)}% sobre otros metodos convencionales.
+            <h4>⚙️ El tipo de archivo más utilizado por los ciberdelincuentes son aquellos correspondientes 
+            a la extension ".{filtered_data["Extension"].value_counts().idxmax()}" que representan un 
+            {percentages(data_grouped_extension)}% del conjunto total.
+
             """,unsafe_allow_html=True)    
 
 
