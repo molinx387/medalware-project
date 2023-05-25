@@ -6,13 +6,11 @@ from general_page import general_malware
 from malware_family import familia_malware
 
 if __name__ == "__main__":
-
-
     # this is the host application, we add children to it and that's it!
     app = HydraApp(
         title="MEDALWARE",
         favicon="📊",
-        hide_streamlit_markers=True ,
+        hide_streamlit_markers=True,
         use_navbar=True,
         navbar_sticky=True,
     )
