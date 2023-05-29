@@ -1,11 +1,7 @@
 import pandas as pd 
 from malware_definitions import malware_dict
 df = pd.read_csv("src/data/malwares.csv")
-df['Fecha'] = pd.to_datetime(df.pop('Dia')) + pd.to_timedelta(df.pop('Hora'))
-df.rename(columns = {'Familia':'Malware'}, inplace=True)
-df.rename(columns = {'Peso (MB)':'Peso'}, inplace=True)
-df.insert(0,"Familia", " ")
-df.insert(0,"SO", " ")
+
 
 for dictionary in malware_dict:
     # Check if the value of the key "Nombre" is in the Malware column of the dataframe
@@ -18,9 +14,5 @@ for dictionary in malware_dict:
         df.loc[mask, 'Familia'] = 'Desconocida'
         df.loc[mask, 'SO'] = 'Desconocido'
 
-df = df.reindex(columns=['Fecha', 'SHA256', 'Malware',
-                         'Familia', 'SO',
-                         'Metodo de Entrega','Extension',
-                         'Peso','Origen'])
 
 df.to_csv('src/data/malwares.csv', index=False)

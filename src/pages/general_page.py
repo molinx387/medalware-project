@@ -38,7 +38,7 @@ class general_malware(HydraHeadApp):
             # )
 
         # Convertir la columna de fecha en formato datetime
-        data["Dia"] = pd.to_datetime(data["Dia"])
+        data["Fecha"] = pd.to_datetime(data["Fecha"])
         with col1:
             date_range = date_range_picker(
                 "_SELECCIONA UN RANGO DE TIEMPO PARA VER LOS REGISTROS_"
@@ -47,17 +47,17 @@ class general_malware(HydraHeadApp):
             end_date = pd.to_datetime(date_range[1]).date()
 
             filtered_data = data[
-                (data["Dia"].dt.date >= start_date) & (data["Dia"].dt.date <= end_date)
+                (data["Fecha"].dt.date >= start_date) & (data["Fecha"].dt.date <= end_date)
             ]
 
             data_grouped = (
-                filtered_data.groupby(filtered_data["Dia"].dt.date)
+                filtered_data.groupby(filtered_data["Fecha"].dt.date)
                 .size()
                 .reset_index(name="cantidad")
             )
         st.divider()
         # Crear el gráfico de área con Plotly Express
-        fig = px.area(data_grouped, x="Dia", y="cantidad")
+        fig = px.area(data_grouped, x="Fecha", y="cantidad")
 
         # Personalizar el diseño del gráfico de área
         fig.update_layout(
@@ -156,14 +156,14 @@ class general_malware(HydraHeadApp):
         )
 
         # Contar la cantidad de filas para cada método de familia
-        data_grouped_familia = filtered_data["Familia"].value_counts().head(6)
+        data_grouped_malware = filtered_data["Malware"].value_counts().head(6)
 
         # Crear el gráfico de torta para método de entrega con plotly.graph_objects
         fig3 = go.Figure(
             data=[
                 go.Pie(
-                    labels=data_grouped_familia.index,
-                    values=data_grouped_familia.values,
+                    labels=data_grouped_malware.index,
+                    values=data_grouped_malware.values,
                 )
             ]
         )
@@ -238,8 +238,8 @@ class general_malware(HydraHeadApp):
                 st.markdown(
                     f"""
                 <h4> 👾 El malware más concurrente hasta la fecha es
-                {filtered_data["Familia"].value_counts().idxmax()},
-                que abarca un {percentages(data_grouped_familia)}% de todo el conjunto de malwares de Medalware
+                {filtered_data["Malware"].value_counts().idxmax()},
+                que abarca un {percentages(data_grouped_malware)}% de todo el conjunto de malwares de Medalware
                 """,
                     unsafe_allow_html=True,
                 )
@@ -279,14 +279,15 @@ class general_malware(HydraHeadApp):
             col2.write(
                 filtered_data[
                     [
-                        "SHA256",
-                        "Familia",
-                        "Extension",
-                        "Peso (MB)",
-                        "Metodo de Entrega",
-                        "Origen",
-                        "Dia",
-                        "Hora",
+                        'Fecha', 
+                        'SHA256', 
+                        'Malware',
+                        'Familia', 
+                        'SO',
+                        'Metodo de Entrega',
+                        'Extension',
+                        'Peso',
+                        'Origen'
                     ]
                 ]
             )
