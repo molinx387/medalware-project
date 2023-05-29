@@ -69,6 +69,21 @@ def data_extractor():
                 
     return df
 
+def data_local(df):
+    for dictionary in malware_dict:
+    # Check if the value of the key "Nombre" is in the Malware column of the dataframe
+        mask = df['Malware'] == dictionary['Malware']
+        if mask.any():
+        # Update the values in the "Familia" column where the condition is True
+            df.loc[mask, 'Familia'] = dictionary['Familia']
+            df.loc[mask, 'SO'] = dictionary['SO']
+        else: 
+            df.loc[mask, 'Familia'] = 'Desconocida'
+            df.loc[mask, 'SO'] = 'Desconocido'
+
+    return(df)
+
+
 def data_cleaner(df):
     df["Fecha"] = pd.to_datetime(df["Fecha"])
     df["Metodo de Entrega"].fillna("Otros", inplace=True)
@@ -99,7 +114,8 @@ def data_cluster(df):
         df_result = pd.concat(
             [df_stored, df_recent], ignore_index=True
         ).drop_duplicates(subset=["SHA256"])
-        df_result.to_csv(csv_path, index=False)
+        df_updated = data_local(df_result)
+        df_updated.to_csv(csv_path, index=False)
     else:
         df_stored = df_recent
         df_stored.to_csv(csv_path, index=False)
@@ -107,6 +123,7 @@ def data_cluster(df):
 
 def data_updater():
     df = data_extractor()
+    df = data_local(df)
     df = data_cleaner(df)
     df = data_cluster(df)
 
