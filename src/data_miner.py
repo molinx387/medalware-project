@@ -1,11 +1,11 @@
 import os
 import requests
-import pandas as pd
+import pandas as pd 
 from dotenv import load_dotenv, find_dotenv
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 import pycountry
-
+from malware_definitions import malware_dict    
 load_dotenv(find_dotenv())
 
 
@@ -33,34 +33,44 @@ def data_extractor():
             df = pd.DataFrame(response_json["data"])
             df = df[
                 [
+                    "first_seen",
                     "sha256_hash",
                     "signature",
+                    "delivery_method",
                     "file_type",
                     "file_size",
-                    "delivery_method",
                     "origin_country",
-                    "first_seen",
                 ]
             ]
             malware_data.append(df.values.tolist()[0])
     table_headers = [
-        "SHA256",
-        "Familia",
-        "Extension",
-        "Peso (MB)",
-        "Metodo de Entrega",
-        "Origen",
         "Fecha",
+        "SHA256",
+        "Malware",
+        "Metodo de Entrega",
+        "Extension",
+        "Peso",
+        "Origen",
     ]
     df = pd.DataFrame(malware_data, columns=table_headers)
+    df.insert(3,"Familia", " ")
+    df.insert(4,"SO", " ")
+ 
+    for dictionary in malware_dict:
+    # Check if the value of the key "Nombre" is in the Malware column of the dataframe
+        mask = df['Malware'] == dictionary['Malware']
+        if mask.any():
+        # Update the values in the "Familia" column where the condition is True
+            df.loc[mask, 'Familia'] = dictionary['Familia']
+            df.loc[mask, 'SO'] = dictionary['SO']
+        else: 
+            df.loc[mask, 'Familia'] = 'Desconocida'
+            df.loc[mask, 'SO'] = 'Desconocido'
+                
     return df
-
 
 def data_cleaner(df):
     df["Fecha"] = pd.to_datetime(df["Fecha"])
-    df["Dia"] = [d.date() for d in df["Fecha"]]
-    df["Hora"] = [d.time() for d in df["Fecha"]]
-    df.drop("Fecha", axis=1, inplace=True)
     df["Metodo de Entrega"].fillna("Otros", inplace=True)
     df["Metodo de Entrega"] = df["Metodo de Entrega"].map(
         {
@@ -77,7 +87,6 @@ def data_cleaner(df):
         country.alpha_2: country.alpha_3 for country in pycountry.countries
     }
     df["Origen"] = df["Origen"].map(alpha_country)
-    df = df.sort_values(by="Hora", ascending=True)
     df.reset_index(drop=True, inplace=True)
     return df
 
