@@ -47,7 +47,8 @@ class general_malware(HydraHeadApp):
             end_date = pd.to_datetime(date_range[1]).date()
 
             filtered_data = data[
-                (data["Fecha"].dt.date >= start_date) & (data["Fecha"].dt.date <= end_date)
+                (data["Fecha"].dt.date >= start_date)
+                & (data["Fecha"].dt.date <= end_date)
             ]
 
             data_grouped = (
@@ -279,15 +280,15 @@ class general_malware(HydraHeadApp):
             col2.write(
                 filtered_data[
                     [
-                        'Fecha', 
-                        'SHA256', 
-                        'Malware',
-                        'Familia', 
-                        'SO',
-                        'Metodo de Entrega',
-                        'Extension',
-                        'Peso',
-                        'Origen'
+                        "Fecha",
+                        "SHA256",
+                        "Malware",
+                        "Familia",
+                        "SO",
+                        "Metodo de Entrega",
+                        "Extension",
+                        "Peso",
+                        "Origen",
                     ]
                 ]
             )

@@ -1,11 +1,12 @@
 import os
 import requests
-import pandas as pd 
+import pandas as pd
 from dotenv import load_dotenv, find_dotenv
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 import pycountry
-from malware_definitions import malware_dict    
+from pages.definition.malware_definitions import malware_dict
+
 load_dotenv(find_dotenv())
 
 
@@ -53,35 +54,36 @@ def data_extractor():
         "Origen",
     ]
     df = pd.DataFrame(malware_data, columns=table_headers)
-    df.insert(3,"Familia", " ")
-    df.insert(4,"SO", " ")
- 
+    df.insert(3, "Familia", " ")
+    df.insert(4, "SO", " ")
+
     for dictionary in malware_dict:
-    # Check if the value of the key "Nombre" is in the Malware column of the dataframe
-        mask = df['Malware'] == dictionary['Malware']
+        # Check if the value of the key "Nombre" is in the Malware column of the dataframe
+        mask = df["Malware"] == dictionary["Malware"]
         if mask.any():
-        # Update the values in the "Familia" column where the condition is True
-            df.loc[mask, 'Familia'] = dictionary['Familia']
-            df.loc[mask, 'SO'] = dictionary['SO']
-        else: 
-            df.loc[mask, 'Familia'] = 'Desconocida'
-            df.loc[mask, 'SO'] = 'Desconocido'
-                
+            # Update the values in the "Familia" column where the condition is True
+            df.loc[mask, "Familia"] = dictionary["Familia"]
+            df.loc[mask, "SO"] = dictionary["SO"]
+        else:
+            df.loc[mask, "Familia"] = "Desconocida"
+            df.loc[mask, "SO"] = "Desconocido"
+
     return df
+
 
 def data_local(df):
     for dictionary in malware_dict:
-    # Check if the value of the key "Nombre" is in the Malware column of the dataframe
-        mask = df['Malware'] == dictionary['Malware']
+        # Check if the value of the key "Nombre" is in the Malware column of the dataframe
+        mask = df["Malware"] == dictionary["Malware"]
         if mask.any():
-        # Update the values in the "Familia" column where the condition is True
-            df.loc[mask, 'Familia'] = dictionary['Familia']
-            df.loc[mask, 'SO'] = dictionary['SO']
-        else: 
-            df.loc[mask, 'Familia'] = 'Desconocida'
-            df.loc[mask, 'SO'] = 'Desconocido'
+            # Update the values in the "Familia" column where the condition is True
+            df.loc[mask, "Familia"] = dictionary["Familia"]
+            df.loc[mask, "SO"] = dictionary["SO"]
+        else:
+            df.loc[mask, "Familia"] = "Desconocida"
+            df.loc[mask, "SO"] = "Desconocido"
 
-    return(df)
+    return df
 
 
 def data_cleaner(df):
