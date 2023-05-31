@@ -75,12 +75,4 @@ class home_malware(HydraHeadApp):
                 col2.markdown(f" >**:red[</{item}>]** **:** {description}")
 
             col2.divider()
-            col2.header("Objetivo cumplido")
-            from streamlit_extras.let_it_rain import rain
-
-            rain(
-                emoji="🥳",
-                font_size=60,
-                falling_speed=4,
-                animation_length="infinite",
-            )
+            col2.header("X")
