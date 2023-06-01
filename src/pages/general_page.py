@@ -275,7 +275,7 @@ class general_malware(HydraHeadApp):
         # Crear la columna con los dos gráficos de torta
         col1, col2 = st.columns([6, 6])
         with col1:
-            pie6_1, pie6_2, pie6_3 = st.columns([2, 3, 3])
+            pie6_1, pie6_2, pie6_3 = st.columns([2, 7, 3])
             pie6_2.plotly_chart(fig6, config={"displaylogo": False})
             with st.expander("🪤"):
                 st.markdown(
@@ -287,7 +287,7 @@ class general_malware(HydraHeadApp):
                     unsafe_allow_html=True,
                 )
                 st.divider()
-            pie1_1, pie1_2, pie1_3 = st.columns([2, 3, 3])
+            pie1_1, pie1_2, pie1_3 = st.columns([2, 7, 3])
             pie1_2.plotly_chart(fig1, config={"displaylogo": False})
             with st.expander("🪤"):
                 st.markdown(
@@ -299,7 +299,7 @@ class general_malware(HydraHeadApp):
                     unsafe_allow_html=True,
                 )
                 st.divider()
-            pie3_1, pie3_2, pie3_3 = st.columns([2, 3, 3])
+            pie3_1, pie3_2, pie3_3 = st.columns([2, 7, 3])
             pie3_2.plotly_chart(fig3, config={"displaylogo": False})
             with st.expander("👾"):
                 st.markdown(
@@ -313,7 +313,7 @@ class general_malware(HydraHeadApp):
                 st.divider()
 
         with col2:
-            pie7_1, pie7_2, pie7_3 = st.columns([2, 3, 3])
+            pie7_1, pie7_2, pie7_3 = st.columns([2, 7, 3])
             pie7_2.plotly_chart(fig7, config={"displaylogo": False})
             with st.expander("⚙️"):
                 st.markdown(
@@ -325,7 +325,7 @@ class general_malware(HydraHeadApp):
                     unsafe_allow_html=True,
                 )
                 st.divider()
-            pie2_1, pie2_2, pie2_3 = st.columns([2, 3, 3])
+            pie2_1, pie2_2, pie2_3 = st.columns([2, 7, 3])
             pie2_2.plotly_chart(fig2, config={"displaylogo": False})
             with st.expander("⚙️"):
                 st.markdown(
@@ -338,7 +338,7 @@ class general_malware(HydraHeadApp):
                 )
                 st.divider()
 
-            pie4_1, pie4_2, pie4_3 = st.columns([2, 3, 3])
+            pie4_1, pie4_2, pie4_3 = st.columns([2, 7, 3])
             pie4_2.plotly_chart(fig4, config={"displaylogo": False})
             with st.expander("🌎"):
                 st.markdown(
