@@ -210,6 +210,60 @@ class general_malware(HydraHeadApp):
             margin=dict(l=10, r=10, t=30, b=10),
         )
 
+        # Contar la cantidad de filas para cada familia
+        data_grouped_familia = filtered_data["Familia"].value_counts().head(6)
+
+        # Crear el gráfico de torta para familia con plotly.graph_objects
+        fig6 = go.Figure(
+            data=[
+                go.Pie(
+                    labels=data_grouped_familia.index,
+                    values=data_grouped_familia.values,
+                )
+            ]
+        )
+
+        # Personalizar el diseño del gráfico de torta para familia
+        fig6.update_traces(
+            textposition="inside",
+            textinfo="percent+label",
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors, width=2)),
+        )
+        fig6.update_layout(
+            title=f"Top Familas de malware",
+            width=450,
+            height=400,
+            margin=dict(l=10, r=10, t=30, b=10),
+        )
+
+         # Contar la cantidad de filas para cada Sistema operativo
+        data_grouped_origen = filtered_data["SO"].value_counts().head(6)
+
+        # Crear el gráfico de torta para Sistema operativo con plotly.graph_objects
+        fig7 = go.Figure(
+            data=[
+                go.Pie(
+                    labels=data_grouped_origen.index,
+                    values=data_grouped_origen.values,
+                )
+            ]
+        )
+
+        # Personalizar el diseño del gráfico de torta para Sistema operativo
+        fig7.update_traces(
+            textposition="inside",
+            textinfo="percent+label",
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors, width=2)),
+        )
+        fig7.update_layout(
+            title=f"Top Sistema operativo",
+            width=500,
+            height=400,
+            margin=dict(l=10, r=10, t=30, b=10),
+        )
+
         def percentaje(data_grouped):
             total_datos = data_grouped.sum()
             porcentajes = data_grouped / total_datos * 100
@@ -221,8 +275,20 @@ class general_malware(HydraHeadApp):
         # Crear la columna con los dos gráficos de torta
         col1, col2 = st.columns([6, 6])
         with col1:
+            pie6_1, pie6_2, pie6_3 = st.columns([2, 3, 3])
+            pie6_2.plotly_chart(fig6, config={"displaylogo": False})
+            with st.expander("🪤"):
+                st.markdown(
+                    f"""
+                <h4> Hasta la fecha, los {filtered_data["Familia"].value_counts().idxmax()} han sido 
+                la familia de malware más predominante, representando aproximadamente el 
+                {percentages(data_grouped_familia)}% del total de amenazas.
+                """,
+                    unsafe_allow_html=True,
+                )
+                st.divider()
             pie1_1, pie1_2, pie1_3 = st.columns([2, 3, 3])
-            pie1_2.plotly_chart(fig1, config={"displayModeBar": False})
+            pie1_2.plotly_chart(fig1, config={"displaylogo": False})
             with st.expander("🪤"):
                 st.markdown(
                     f"""
@@ -234,21 +300,33 @@ class general_malware(HydraHeadApp):
                 )
                 st.divider()
             pie3_1, pie3_2, pie3_3 = st.columns([2, 3, 3])
-            pie3_2.plotly_chart(fig3, config={"displayModeBar": False})
+            pie3_2.plotly_chart(fig3, config={"displaylogo": False})
             with st.expander("👾"):
                 st.markdown(
                     f"""
                 <h4> 👾 El malware más concurrente hasta la fecha es
                 {filtered_data["Malware"].value_counts().idxmax()},
-                que abarca un {percentages(data_grouped_malware)}% de todo el conjunto de malwares de Medalware
+                que abarca un {percentages(data_grouped_malware)}% de todo el conjunto de malwares
                 """,
                     unsafe_allow_html=True,
                 )
                 st.divider()
 
         with col2:
+            pie7_1, pie7_2, pie7_3 = st.columns([2, 3, 3])
+            pie7_2.plotly_chart(fig7, config={"displaylogo": False})
+            with st.expander("⚙️"):
+                st.markdown(
+                    f"""
+                <h4>⚙️ El tipo de archivo más utilizado por los ciberdelincuentes son aquellos correspondientes 
+                a la extension ".{filtered_data["Extension"].value_counts().idxmax()}" que representan un 
+                {percentages(data_grouped_extension)}% del conjunto total.
+                """,
+                    unsafe_allow_html=True,
+                )
+                st.divider()
             pie2_1, pie2_2, pie2_3 = st.columns([2, 3, 3])
-            pie2_2.plotly_chart(fig2, config={"displayModeBar": False})
+            pie2_2.plotly_chart(fig2, config={"displaylogo": False})
             with st.expander("⚙️"):
                 st.markdown(
                     f"""
@@ -261,7 +339,7 @@ class general_malware(HydraHeadApp):
                 st.divider()
 
             pie4_1, pie4_2, pie4_3 = st.columns([2, 3, 3])
-            pie4_2.plotly_chart(fig4, config={"displayModeBar": False})
+            pie4_2.plotly_chart(fig4, config={"displaylogo": False})
             with st.expander("🌎"):
                 st.markdown(
                     f"""

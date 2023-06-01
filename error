@@ -1,4 +1,4 @@
-Traceback (most recent call last):
+""""Traceback (most recent call last):
   File "C:\Users\jump2\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 971, in json
     return complexjson.loads(self.text, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -26,3 +26,14 @@ Traceback (most recent call last):
   File "C:\Users\jump2\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\models.py", line 975, in json
     raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
 requests.exceptions.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+
+
+Your app is having trouble loading the hydralit_components.NavBar.nav_bar component.
+
+(The app is attempting to load the component from ****, and hasn't received its "streamlit
+" message.)
+
+If this is a development build, have you started the dev server?
+If this is a release build, have you compiled the frontend?
+For more troubleshooting help, please see the Streamlit Component docs or visit our forums""" 

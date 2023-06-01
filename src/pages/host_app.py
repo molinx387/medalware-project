@@ -16,7 +16,7 @@ if __name__ == "__main__":
         favicon="📊",
         hide_streamlit_markers=True,
         use_navbar=True,
-        navbar_sticky=True,
+        
     )
 
     # add all your application classes here

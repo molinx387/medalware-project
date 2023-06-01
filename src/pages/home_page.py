@@ -9,20 +9,14 @@ from PIL import Image
 
 class home_malware(HydraHeadApp):
     def run(self):
-        medalware_proyect = st.container()
-        with medalware_proyect:
-            col1, col2, col3 = st.columns([2, 4, 2])
-            (
-                col4,
-                col5,
-                col6,
-                col7,
-            ) = st.columns([2.5, 2.5, 2.5, 2.5])
-            col8, col9, col10 = st.columns([3.33, 3.33, 3.33])
-            # col2.title("📊MEDALWARE PROJECT📊")
-
+        col1, col2, col3 = st.columns([2, 4, 2])
+        medalware_proyect_logo= st.container()
+        with medalware_proyect_logo:
             logo = Image.open("src/media/logo.png")
             col2.image(logo)
+
+        medalware_proyect = st.container()    
+        with medalware_proyect:
             col2.divider()
             col2.title(
                 "📊 MEDALWARE, LA WEB DE ANÁLISIS EXPLORATORIO DE DATOS DE MALWARE"
@@ -42,6 +36,9 @@ class home_malware(HydraHeadApp):
                 unsafe_allow_html=True,
             )
             col2.divider()
+
+        medalware_proyect_data = st.container()    
+        with medalware_proyect_data:
             col2.header("📌¿QUE TIPO DE DATOS PROPORCIONA MEDALWARE?")
             col2.markdown(
                 """
