@@ -1,5 +1,5 @@
 import pandas as pd
-from malware_definitions import malware_dict
+from pages.definition.malware_definitions import malware_dict
 
 df = pd.read_csv("src/data/malwares.csv")
 

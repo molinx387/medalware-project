@@ -237,7 +237,7 @@ class general_malware(HydraHeadApp):
             margin=dict(l=10, r=10, t=30, b=10),
         )
 
-         # Contar la cantidad de filas para cada Sistema operativo
+        # Contar la cantidad de filas para cada Sistema operativo
         data_grouped_origen = filtered_data["SO"].value_counts().head(6)
 
         # Crear el gráfico de torta para Sistema operativo con plotly.graph_objects

@@ -10,12 +10,12 @@ from PIL import Image
 class home_malware(HydraHeadApp):
     def run(self):
         col1, col2, col3 = st.columns([2, 4, 2])
-        medalware_proyect_logo= st.container()
+        medalware_proyect_logo = st.container()
         with medalware_proyect_logo:
             logo = Image.open("src/media/logo.png")
             col2.image(logo)
 
-        medalware_proyect = st.container()    
+        medalware_proyect = st.container()
         with medalware_proyect:
             col2.divider()
             col2.title(
@@ -37,7 +37,7 @@ class home_malware(HydraHeadApp):
             )
             col2.divider()
 
-        medalware_proyect_data = st.container()    
+        medalware_proyect_data = st.container()
         with medalware_proyect_data:
             col2.header("📌¿QUE TIPO DE DATOS PROPORCIONA MEDALWARE?")
             col2.markdown(
