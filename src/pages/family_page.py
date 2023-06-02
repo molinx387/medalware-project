@@ -66,14 +66,12 @@ class family_malware(HydraHeadApp):
             None,
         )
         
-
-
         title_familia = st.container()
         with title_familia:
             # colt1, colt2, colt3 = st.columns([7,5,7])
-            col1, col2, col3 = st.columns([2.5, 5, 2.5])
+            col1, col2 = st.columns([6, 5])
             col4, col5, col6 = st.columns([1, 10, 1])
-            col2.markdown(
+            col1.markdown(
                 f"""
                 <div style="text-align: center">
                 <h1>☣️{familia_selected}☣️
@@ -85,13 +83,13 @@ class family_malware(HydraHeadApp):
             if definicion:
                 col2.markdown(
                     f"""
-                <div style="text-align: center">
+                <div style="text-align: justify">
                 <h4>{definicion}
                 """,
                     unsafe_allow_html=True,
                 )
             
-            col2.markdown(
+            col1.markdown(
                 f"""
                 <div style="text-align: center">
                 <h2> 📑 Analisis del familia {familia_selected}📑
@@ -101,14 +99,11 @@ class family_malware(HydraHeadApp):
 
         tag_selector = st.container()
         with tag_selector:
-            tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+            tab1, tab2, tab3,tab4 = st.tabs(
                 [
-                    "       📈 Registros",
-                    "     🪬Familia",
-                    "        🖥Sistema Operativo",
-                    "       💾Tipo de Archivo",
-                    "       📦Peso",
-                    "      📬Metodo de Entrega",
+                    "       📈Registros",
+                    "       🪬Familia",
+                    "       📊Caracteristicas",
                     "       🌎Origen",
                 ]
             )
@@ -116,8 +111,8 @@ class family_malware(HydraHeadApp):
         total_datos = data["Familia"].value_counts().sum()
         porcentajes = selected_data["Familia"].value_counts() / total_datos * 100
 
-        definicion_familia = st.container()
-        with definicion_familia:
+        registro_familia = st.container()
+        with registro_familia:
             tab1.markdown(
                 f"""
                     <div style="text-align: justify">
@@ -128,38 +123,44 @@ class family_malware(HydraHeadApp):
                 """,
                 unsafe_allow_html=True,
             )
-            tab4.markdown(
-                f"""
-                    <div style="text-align: justify">
-                    <h4> 🔰 {familia_selected.title()} es un familia que se encuentra mayormente oculto 
-                    archivos de extension .{selected_data["Extension"].value_counts().idxmax()}
-                    """,
-                unsafe_allow_html=True,
-            )
-            tab5.markdown(
-                f"""
-                    <div style="text-align: justify">
-                    <h4> 🔰 El peso promedio de un archivo {familia_selected.title()} 
-                    es de {selected_data["Peso"].mean().round(2)} KB
-                    """,
-                unsafe_allow_html=True,
-            )
-            tab6.markdown(
-                f"""
-                    <div style="text-align: justify">
-                    <h4> 🔰 Este tipo de familia infecta llega a los sistemas a traves de
-                    {selected_data["Metodo de Entrega"].value_counts().idxmax()}
-                    """,
-                unsafe_allow_html=True,
-            )
-            tab7.markdown(
-                f"""
-                    <div style="text-align: justify">
-                    <h4> 🔰 Los datos recopilados de este familia indican que a afectado mayormente al pais 
-                    {selected_data["Origen"].value_counts().idxmax()} (ISO 3166-1, alpha-3)
-                    """,
-                unsafe_allow_html=True,
-            )
+
+        col1_2, col2_2, col3_2= tab3.columns([4, 4, 4])
+        caracteristicas = tab3.container()
+        with caracteristicas:    
+                col1_2.markdown(
+                        f"""
+                        <div style="text-align: justify">
+                        <h4> 🔰Este tipo de malware afecta principalmente a sistemas {selected_data["SO"].value_counts().idxmax()}
+                        """,
+                        unsafe_allow_html=True,
+                    ) 
+                col2_2.markdown(
+                    f"""
+                        <div style="text-align: justify">
+                        <h4> 🔰 {familia_selected.title()} es un malware que se ejcuta bajo
+                        archivos de extension .{selected_data["Extension"].value_counts().idxmax()}
+                        """,
+                    unsafe_allow_html=True,
+                )
+                col3_2.markdown(
+                    f"""
+                        <div style="text-align: justify">
+                        <h4> 🔰 Este tipo de malware infecta llega a los sistemas a traves de
+                        {selected_data["Metodo de Entrega"].value_counts().idxmax()}
+                        """,
+                    unsafe_allow_html=True,
+                )
+        col1_m, col2_m = tab4.columns([7, 3])
+        origen_tab4 = st.container()
+        with origen_tab4:
+            col2_m.markdown(
+                        f"""
+                            <div style="text-align: justify">
+                            <h4> 🔰 Los datos recopilados de este malware indican que a afectado mayormente al pais 
+                            {selected_data["Origen"].value_counts().idxmax()} (ISO 3166-1, alpha-3)
+                            """,
+                        unsafe_allow_html=True,
+                    )
 
         data_grouped_mapa = selected_data["Origen"].value_counts()
 
@@ -174,10 +175,10 @@ class family_malware(HydraHeadApp):
             locations="iso_alpha",
             locationmode="ISO-3",
             color="cantidad",
-            color_continuous_scale="Viridis",
+             color_continuous_scale="portland",
             labels={"cantidad": "Cantidad"},
             title="Distribución de Origen",
-            projection="natural earth",
+            projection="equirectangular",
         )
 
         fig5.update_geos(
@@ -192,13 +193,12 @@ class family_malware(HydraHeadApp):
 
         fig5.update_layout(width=800, height=600)
 
-        mapa_familias = tab7.container()
-        with mapa_familias:
-            col1, col2, col3 = st.columns([3, 7, 3])
-            col2.subheader("📌ESPECTRO GLOBAL DE DATOS DE MEDALWARE📌")
-            col2.plotly_chart(
+        mapa_malwares = st.container()
+        with mapa_malwares:
+            col1_m.plotly_chart(
                 fig5, config={"displaylogo": False}, use_container_width=True
             )
+
 
         tabla_familias = tab1.container()
         with tabla_familias:
@@ -220,38 +220,25 @@ class family_malware(HydraHeadApp):
                 ]
             )
 
-        # Obtener la familia del familia seleccionado
-        familia_seleccionada = selected_data["Familia"].iloc[0]
-        # Filtrar los datos para incluir solo los familias de la misma familia
-        familias_misma_familia = data[data["Familia"] == familia_seleccionada]
-        # Agrupar los familias por nombre y contar la cantidad de ocurrencias de cada uno
-        datos_agrupados = familias_misma_familia["Familia"].value_counts().reset_index()
-        datos_agrupados.columns = ["Familia", "Cantidad"]
-        # Calcular la cantidad total de familias de la misma familia
-        total_familias_familia = datos_agrupados["Cantidad"].sum()
-        # Calcular el porcentaje del familia seleccionado en comparación con otros de la misma familia
-        porcentaje_seleccionado = (
-            selected_data.shape[0] / total_familias_familia
-        ) * 100
+        malware_counts = selected_data["Malware"].value_counts()
 
+        
         # Mostrar el porcentaje en Streamlit
         tab2.markdown(
             f"""
                 <div style="text-align: justify">
                 <h4>Este tipo de familia 
-                abarca un: {porcentaje_seleccionado:.2f}%
+                abarca un: 
                 de los registros de toda la  familia de """,
             unsafe_allow_html=True,
         )
-        # Crear la gráfica de dispersión
-        fig5 = px.bar(
-            datos_agrupados,
-            x="Familia",
-            y="Cantidad",
-            title=f"Gráfica de los familia pertencientes a la familia ",
+        fig5 = px.scatter(selected_data, x="Fecha", y="Malware", color="Malware",
+                         labels={"Fecha": "Fecha", "Malware": "Malware"}, title="Malware por Fecha")
+
+        fig5.update_layout(
+            width=800,
+            height=700,
         )
-        # Personalizar el diseño de la gráfica
-        fig5.update_layout(xaxis_title="Familia", yaxis_title="Cantidad", title_x=0.25)
 
         # Mostrar la gráfica en Streamlit
         familias_familias = st.container()
@@ -263,4 +250,90 @@ class family_malware(HydraHeadApp):
                 width=800,
                 height=400,
             )
+        # Personalizar Colores de las gráficas de torta
+        colors = px.colors.qualitative.G10
 
+        # Contar la cantidad de filas para cada Sistema operativo
+        data_grouped_origen = selected_data["SO"].value_counts()
+        # Crear el gráfico de torta para Sistema operativo con plotly.graph_objects
+        fig7 = go.Figure(
+            data=[
+                go.Pie(
+                    labels=data_grouped_origen.index,
+                    values=data_grouped_origen.values,
+                )
+            ]
+        )
+
+        # Personalizar el diseño del gráfico de torta para Sistema operativo
+        fig7.update_traces(
+            textposition="inside",
+            textinfo="percent+label",
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors, width=2)),
+        )
+        fig7.update_layout(
+            width=400,
+            height=200,
+            margin=dict(l=10, r=10, t=30, b=10),
+        )
+
+        # Contar la cantidad de filas para cada Sistema operativo
+        data_grouped_origen = selected_data["Extension"].value_counts()
+        # Crear el gráfico de torta para Sistema operativo con plotly.graph_objects
+        fig8 = go.Figure(
+            data=[
+                go.Pie(
+                    labels=data_grouped_origen.index,
+                    values=data_grouped_origen.values,
+                )
+            ]
+        )
+
+        # Personalizar el diseño del gráfico de torta para Sistema operativo
+        fig8.update_traces(
+            textposition="inside",
+            textinfo="percent+label",
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors, width=2)),
+        )
+        fig8.update_layout(
+            width=400,
+            height=200,
+            margin=dict(l=10, r=10, t=30, b=10),
+        )
+        # Contar la cantidad de filas para cada Sistema operativo
+        data_grouped_origen = selected_data["Metodo de Entrega"].value_counts()
+        # Crear el gráfico de torta para Sistema operativo con plotly.graph_objects
+        fig9 = go.Figure(
+            data=[
+                go.Pie(
+                    labels=data_grouped_origen.index,
+                    values=data_grouped_origen.values,
+                )
+            ]
+        )
+
+        # Personalizar el diseño del gráfico de torta para Sistema operativo
+        fig9.update_traces(
+            textposition="inside",
+            textinfo="percent+label",
+            textfont_size=12,
+            marker=dict(colors=colors, line=dict(color=colors, width=2)),
+        )
+        fig9.update_layout(
+            width=400,
+            height=200,
+            margin=dict(l=10, r=10, t=30, b=10),
+        )
+
+        fig_peso = px.box(selected_data, y="Peso", labels={"y": "Peso"})
+        fig_peso.update_layout(
+            width=300,
+            height=450,)
+        
+        grafica_pie = tab3.container()
+        with grafica_pie:
+            col1_2.plotly_chart(fig7, config={"displaylogo": False})
+            col2_2.plotly_chart(fig8, config={"displaylogo": False})
+            col3_2.plotly_chart(fig9, config={"displaylogo": False})

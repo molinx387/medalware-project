@@ -385,7 +385,7 @@ class general_malware(HydraHeadApp):
             locations="iso_alpha",
             locationmode="ISO-3",
             color="cantidad",
-            color_continuous_scale="Viridis",
+            color_continuous_scale="portland",
             labels={"cantidad": "Cantidad"},
             title="Distribución de Origen",
             projection="orthographic",
