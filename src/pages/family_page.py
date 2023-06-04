@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import hydralit as hy
 from hydralit import HydraHeadApp
 from definition.family_definitions import family_dict
+from streamlit_extras.add_vertical_space import add_vertical_space
 
 class family_malware(HydraHeadApp):
     def run(self):
@@ -98,7 +99,7 @@ class family_malware(HydraHeadApp):
             tab1, tab2, tab3,tab4 = st.tabs(
                 [
                     "       📈Registros",
-                    "       🪬Familia",
+                    "       📂Familia",
                     "       📊Caracteristicas",
                     "       🌎Origen",
                 ]

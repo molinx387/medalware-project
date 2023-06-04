@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import hydralit as hy
 from hydralit import HydraHeadApp
 from PIL import Image
-
+from streamlit_extras.add_vertical_space import add_vertical_space
 
 class home_malware(HydraHeadApp):
     def run(self):
@@ -52,24 +52,62 @@ class home_malware(HydraHeadApp):
             """,
                 unsafe_allow_html=True,
             )
-            info_data = {
-                "🏷SHA256": "Es un algoritmo  criptográfico que se utiliza para la verificación de la integridad de mensajes, archivos y datos.",
-                "🧬Familia": "Una familia de malware es un grupo de programas maliciosos que comparten características similares. Los miembros de una familia de malware pueden tener diferentes nombres y versiones, pero comparten el mismo código base o funcionalidad.",
-                "⚙️Extension": "Es una cadena de caracteres anexada al nombre de un archivo, habitualmente predicha por un punto. Su función principal es distinguir el contenido del archivo, de modo que el sistema operativo disponga del procedimiento necesario para ejecutarlo o interpretarlo",
-                "📥Peso": "Espacio que ocupa un determinado archivo en un disco.",
-                "🪤Metood de Entrega": "Es la forma como el malware es llevado al usuario final y su dispositivo",
-                "🌎Origen": "El origen refiere al pais de donde provino la muestra de malware",
-                "📆Dia": "El dia en el que la muestra de malware fue registrada en Medalware",
-                "⏰Hora": "La hora exacta en la que la muestra fue registrada en Medalware",
-            }
-            items = {
-                "item 1": "description 1",
-                "item 2": "description 2",
-                "item 3": "description 3",
-            }
-            col2.subheader(body="")
-            for item, description in info_data.items():
-                col2.markdown(f" >**:red[</{item}>]** **:** {description}")
-
-            col2.divider()
-            col2.header("X")
+            space = col2.container()
+            with space:
+                add_vertical_space(1)
+            with col2.expander("**🔑  SHA256**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>Es un algoritmo  criptográfico que se utiliza para la verificación de la integridad de mensajes, archivos y datos.
+                """,
+                    unsafe_allow_html=True,
+                )
+            with col2.expander("**📂  FAMILIA**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>Una familia de malware es un grupo de programas maliciosos que comparten características similares. Los miembros de una familia de malware pueden tener diferentes nombres y versiones, pero comparten el mismo código base o funcionalidad.
+                """,
+                    unsafe_allow_html=True,
+                )
+            with col2.expander("**⚙️  EXTENSION**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>Es una cadena de caracteres anexada al nombre de un archivo, habitualmente predicha por un punto. Su función principal es distinguir el contenido del archivo, de modo que el sistema operativo disponga del procedimiento necesario para ejecutarlo o interpretarlo.
+                """,
+                    unsafe_allow_html=True,
+                )
+            with col2.expander("**🧱  PESO**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>Espacio que ocupa un determinado archivo en un disco.
+                """,
+                    unsafe_allow_html=True,
+                )
+            with col2.expander("**📥   METODO DE ENTREGA**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>Es la forma como el malware es llevado al usuario final y su dispositivo.
+                """,
+                    unsafe_allow_html=True,
+                )
+            with col2.expander("**🌎  ORIGEN**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>El origen refiere al pais de donde provino la muestra de malware.
+                """,
+                    unsafe_allow_html=True,
+                )
+            with col2.expander("**📅  FECHA**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>El origen refiere al pais de donde provino la muestra de malware.
+                """,
+                    unsafe_allow_html=True,
+                )

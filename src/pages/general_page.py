@@ -82,7 +82,7 @@ class general_malware(HydraHeadApp):
 
         title_analisis = st.container()
         with title_analisis:
-            col1, col2, col3 = st.columns([1, 8, 1])
+            col1, col2, col3 = st.columns([0.7, 9, 0.7])
             col4, col5, col6 = st.columns([2.2, 8, 2.2])
             col2.markdown(f"""
                 <div style="text-align: center">

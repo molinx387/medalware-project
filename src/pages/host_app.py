@@ -21,9 +21,9 @@ if __name__ == "__main__":
     # add all your application classes here
     app.add_app(title="Inicio", icon="🏠", app=home_malware())
     app.add_app(title="Información General", icon="📚", app=general_malware())
-    app.add_app(title="Analisis de  Malwares", icon="🪬", app=type_malware())
+    app.add_app(title="Analisis de  Malwares", icon="🔎", app=type_malware())
     app.add_app(title="Analisis de Familias", icon="🔖", app=family_malware())
     app.add_app(title="Metodos de Entregas", icon="📥", app=delivery_malware())
-    app.add_app(title="Informacion de Origen", icon="🌎", app=origin_malware())
+    #app.add_app(title="Informacion de Origen", icon="🌎", app=origin_malware())
     # run the whole lot
     app.run()
