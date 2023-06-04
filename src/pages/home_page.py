@@ -63,6 +63,15 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
+            with col2.expander("**👾  MALWARE**",expanded=False):
+                st.markdown(
+                    f"""                <div style="text-align: justify">
+                <h6>Malware es cualquier tipo de software malicioso diseñado para infiltrarse en los sistemas operativos de los dispositivo y realizar acciones sin el conocimiento del usuario.
+
+                """,
+                    unsafe_allow_html=True,
+                )
+
             with col2.expander("**📂  FAMILIA**",expanded=False):
                 st.markdown(
                     f"""
@@ -95,6 +104,15 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
+            with col2.expander("**💻   SISTEMA OPERATIVO**",expanded=False):
+                st.markdown(
+                    f"""
+                <div style="text-align: justify">
+                <h6>Es el entorno compuesto de programas informáticos que administran los recursos de una computadora, smartphone y cualquier dispositivo.
+                """,
+                    unsafe_allow_html=True,
+                )
+                
             with col2.expander("**🌎  ORIGEN**",expanded=False):
                 st.markdown(
                     f"""
