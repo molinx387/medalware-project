@@ -99,7 +99,7 @@ class family_malware(HydraHeadApp):
             tab1, tab2, tab3,tab4 = st.tabs(
                 [
                     "       📈Registros",
-                    "       📂Familia",
+                    "       📂Malwares constitutivos",
                     "       📊Caracteristicas",
                     "       🌎Origen",
                 ]
