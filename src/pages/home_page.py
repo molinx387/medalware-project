@@ -7,6 +7,7 @@ from hydralit import HydraHeadApp
 from PIL import Image
 from streamlit_extras.add_vertical_space import add_vertical_space
 
+
 class home_malware(HydraHeadApp):
     def run(self):
         col1, col2, col3 = st.columns([2, 4, 2])
@@ -55,7 +56,7 @@ class home_malware(HydraHeadApp):
             space = col2.container()
             with space:
                 add_vertical_space(1)
-            with col2.expander("**🔑  SHA256**",expanded=False):
+            with col2.expander("**🔑  SHA256**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
@@ -63,7 +64,7 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
-            with col2.expander("**👾  MALWARE**",expanded=False):
+            with col2.expander("**👾  MALWARE**", expanded=False):
                 st.markdown(
                     f"""                <div style="text-align: justify">
                 <h6>Malware es cualquier tipo de software malicioso diseñado para infiltrarse en los sistemas operativos de los dispositivo y realizar acciones sin el conocimiento del usuario.
@@ -72,7 +73,7 @@ class home_malware(HydraHeadApp):
                     unsafe_allow_html=True,
                 )
 
-            with col2.expander("**📂  FAMILIA**",expanded=False):
+            with col2.expander("**📂  FAMILIA**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
@@ -80,7 +81,7 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
-            with col2.expander("**⚙️  EXTENSION**",expanded=False):
+            with col2.expander("**⚙️  EXTENSION**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
@@ -88,7 +89,7 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
-            with col2.expander("**🧱  PESO**",expanded=False):
+            with col2.expander("**🧱  PESO**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
@@ -96,7 +97,7 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
-            with col2.expander("**📥   METODO DE ENTREGA**",expanded=False):
+            with col2.expander("**📥   METODO DE ENTREGA**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
@@ -104,7 +105,7 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
-            with col2.expander("**💻   SISTEMA OPERATIVO**",expanded=False):
+            with col2.expander("**💻   SISTEMA OPERATIVO**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
@@ -112,8 +113,8 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
-                
-            with col2.expander("**🌎  ORIGEN**",expanded=False):
+
+            with col2.expander("**🌎  ORIGEN**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
@@ -121,7 +122,7 @@ class home_malware(HydraHeadApp):
                 """,
                     unsafe_allow_html=True,
                 )
-            with col2.expander("**📅  FECHA**",expanded=False):
+            with col2.expander("**📅  FECHA**", expanded=False):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">

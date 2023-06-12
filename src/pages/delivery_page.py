@@ -6,22 +6,25 @@ import plotly.graph_objects as go
 import hydralit as hy
 from hydralit import HydraHeadApp
 
+
 class delivery_malware(HydraHeadApp):
     def run(self):
         data = pd.read_csv("src/data/malwares.csv")
         title = st.container()
         with title:
-            col1, col2 = st.columns([5,6])
-            col1.title('ANALISIS DE METODOS DE ENTREGA DE MALWARE')
-            col1.subheader("📌En este apartado se encuentra informacion sobre la forma en la que el malware llega a un sistema o usuario")
+            col1, col2 = st.columns([5, 6])
+            col1.title("ANALISIS DE METODOS DE ENTREGA DE MALWARE")
+            col1.subheader(
+                "📌En este apartado se encuentra informacion sobre la forma en la que el malware llega a un sistema o usuario"
+            )
             options = data["Familia"].unique()
             options = data["Metodo de Entrega"].unique()
             entraga_selected = col1.selectbox("👇Selecciona Metodo de Entrega👇", options)
-            selected_data_metodo= data[data["Metodo de Entrega"] == entraga_selected]
-            colt1, colt2, colt3 = st.columns([6,6,6])
-            col1.title(f'📥{entraga_selected.title()}📥')
+            selected_data_metodo = data[data["Metodo de Entrega"] == entraga_selected]
+            colt1, colt2, colt3 = st.columns([6, 6, 6])
+            col1.title(f"📥{entraga_selected.title()}📥")
             st.divider()
-            #col2.image("src/media/method.png")
+            # col2.image("src/media/method.png")
 
         # Personalizar Colores de las gráficas de torta
         colors = px.colors.qualitative.G10
@@ -34,7 +37,6 @@ class delivery_malware(HydraHeadApp):
                     labels=data_metodo.index,
                     values=data_metodo.values,
                     pull=[0.1, 0.1, 0.1, 0.1, 0.1],
-                    
                 )
             ]
         )
@@ -52,19 +54,30 @@ class delivery_malware(HydraHeadApp):
             margin=dict(l=140, r=0, t=0, b=130),
         )
         fig1.update(layout_showlegend=False)
-        
+
         grafica_pie = col2.container()
         with grafica_pie:
             st.plotly_chart(fig1, config={"displaylogo": False})
 
-      
         tabla_descarga_wed = st.container()
         with tabla_descarga_wed:
             col1, col2, col3 = st.columns([0.1, 5, 0.1])
-            col2.subheader(f"📋⬇️Registro de de datos de malwares que fueron recibidos mediante {entraga_selected}📋⬇️")
+            col2.subheader(
+                f"📋⬇️Registro de de datos de malwares que fueron recibidos mediante {entraga_selected}📋⬇️"
+            )
             col2.write(
                 selected_data_metodo[
-                    ["Fecha", "SHA256", "Malware", "Familia", "SO", "Metodo de Entrega", "Extension", "Peso", "Origen"]
+                    [
+                        "Fecha",
+                        "SHA256",
+                        "Malware",
+                        "Familia",
+                        "SO",
+                        "Metodo de Entrega",
+                        "Extension",
+                        "Peso",
+                        "Origen",
+                    ]
                 ]
             )
 
@@ -106,7 +119,7 @@ class delivery_malware(HydraHeadApp):
                 width=800,
                 height=400,
             )
-        
+
         data_grouped_mapa = selected_data_metodo["Origen"].value_counts()
 
         # Crear el DataFrame con los datos de cantidad por origen
@@ -120,7 +133,7 @@ class delivery_malware(HydraHeadApp):
             locations="iso_alpha",
             locationmode="ISO-3",
             color="cantidad",
-            title=f'🔻Paises en donde la {entraga_selected} es el método de entrega de malware mas comun🔻',
+            title=f"🔻Paises en donde la {entraga_selected} es el método de entrega de malware mas comun🔻",
             color_continuous_scale="portland",
             labels={"cantidad": "Cantidad"},
             projection="equirectangular",
@@ -143,4 +156,3 @@ class delivery_malware(HydraHeadApp):
             st.plotly_chart(
                 fig5, config={"displaylogo": False}, use_container_width=True
             )
-

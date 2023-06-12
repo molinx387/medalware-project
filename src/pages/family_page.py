@@ -8,6 +8,7 @@ from hydralit import HydraHeadApp
 from definition.family_definitions import family_dict
 from streamlit_extras.add_vertical_space import add_vertical_space
 
+
 class family_malware(HydraHeadApp):
     def run(self):
         data = pd.read_csv("src/data/malwares.csv")
@@ -17,7 +18,8 @@ class family_malware(HydraHeadApp):
             col1, col2 = st.columns([3, 7])
             col1.title("ANÁLISIS DE DATOS DE FAMILIAS DE MALWARE")
             col1.subheader(
-                "📌En este apartado se encuentra informacion relativa a los registros de familias de malware")
+                "📌En este apartado se encuentra informacion relativa a los registros de familias de malware"
+            )
             options = data["Familia"].unique()
             familia_selected = col1.selectbox("👇Selecciona tipo de familia👇", options)
 
@@ -65,7 +67,7 @@ class family_malware(HydraHeadApp):
             ),
             None,
         )
-        
+
         title_familia = st.container()
         with title_familia:
             # colt1, colt2, colt3 = st.columns([7,5,7])
@@ -78,7 +80,7 @@ class family_malware(HydraHeadApp):
                 """,
                 unsafe_allow_html=True,
             )
-            
+
             if definicion:
                 col2.markdown(
                     f"""
@@ -96,7 +98,7 @@ class family_malware(HydraHeadApp):
             )
         tag_selector = st.container()
         with tag_selector:
-            tab1, tab2, tab3,tab4 = st.tabs(
+            tab1, tab2, tab3, tab4 = st.tabs(
                 [
                     "       📈Registros",
                     "       📂Malwares constitutivos",
@@ -121,41 +123,40 @@ class family_malware(HydraHeadApp):
                 unsafe_allow_html=True,
             )
 
-
-        col1_2, col2_2, col3_2= tab3.columns([4, 4, 4])
+        col1_2, col2_2, col3_2 = tab3.columns([4, 4, 4])
         caracteristicas = tab3.container()
-        with caracteristicas:   
-                col1_2.markdown(
-                        f"""
+        with caracteristicas:
+            col1_2.markdown(
+                f"""
                         <div style="text-align: center">
                         <h4>🔴{familia_selected} es una familia de malware que 
                         afecta principalmente a sistemas  {selected_data["SO"].value_counts().idxmax()}
                         """,
-                        unsafe_allow_html=True,
-                    )
-                col2_2.markdown(
-                    f"""
+                unsafe_allow_html=True,
+            )
+            col2_2.markdown(
+                f"""
                         <div style="text-align: center">
                         <h4>🟠La mayoria de los malwares pertenecientes a la familia
                         {familia_selected.title()} se ejecutan bajo archivos de extension 
                         .{selected_data["Extension"].value_counts().idxmax()}
                         """,
-                    unsafe_allow_html=True,
-                )
-                col3_2.markdown(
-                    f"""
+                unsafe_allow_html=True,
+            )
+            col3_2.markdown(
+                f"""
                         <div style="text-align: center">
                         <h4>🟢 Un {familia_selected}
                         se caracteriza por ingresar a los sistemas a traves de
                         {selected_data["Metodo de Entrega"].value_counts().idxmax()}
                         """,
-                    unsafe_allow_html=True,
-                )
+                unsafe_allow_html=True,
+            )
         col1_m, col2_m = tab4.columns([7, 3])
         origen_tab4 = st.container()
         with origen_tab4:
-                col1_m.markdown(
-                        f"""
+            col1_m.markdown(
+                f"""
                             <div style="text-align: center">
                             <h4>📮Los datos recopilados a partir de los registros
                             de un {familia_selected}, indican que esta familia de software malicioso
@@ -163,8 +164,8 @@ class family_malware(HydraHeadApp):
 
                             <h6> Nota: Medalware clasifica los paises tomando como referencia la normativa ISO 3166-1, alpha-3
                             """,
-                        unsafe_allow_html=True,
-                    )
+                unsafe_allow_html=True,
+            )
         data_grouped_mapa = selected_data["Origen"].value_counts()
 
         # Crear el DataFrame con los datos de cantidad por origen
@@ -178,7 +179,7 @@ class family_malware(HydraHeadApp):
             locations="iso_alpha",
             locationmode="ISO-3",
             color="cantidad",
-             color_continuous_scale="portland",
+            color_continuous_scale="portland",
             labels={"cantidad": "Cantidad"},
             title="Distribución de Origen",
             projection="equirectangular",
@@ -202,14 +203,16 @@ class family_malware(HydraHeadApp):
                 fig5, config={"displaylogo": False}, use_container_width=True
             )
 
-
         tabla_familias = tab1.container()
         with tabla_familias:
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
-            col2.markdown(f"""
+            col2.markdown(
+                f"""
             <div style="text-align: center">
             <h4> 📋⬇️Tabla de Registro de datos recopilados de {familia_selected}⬇️📋  
-            """,unsafe_allow_html=True)
+            """,
+                unsafe_allow_html=True,
+            )
             col2.write(
                 selected_data[
                     [
@@ -228,7 +231,6 @@ class family_malware(HydraHeadApp):
 
         malware_counts = selected_data["Malware"].value_counts()
 
-        
         # Mostrar el porcentaje en Streamlit
 
         familia_counted = len(list(selected_data["Malware"].unique()))
@@ -239,15 +241,19 @@ class family_malware(HydraHeadApp):
                 la familia de malwares {familia_selected}
                 esta constituida por {(familia_counted)} malwares principales
                 <h5>🔸Estos malwares corresponden a: {selected_data["Malware"].unique()}
-                """,unsafe_allow_html=True)
-        fig5 = px.scatter(selected_data, x="Fecha", y="Malware", color="Malware",
-                         labels={"Fecha": "Fecha", "Malware": "Malware"}, title=f"🔻Malwares que conforman la Familia {familia_selected}🔻")
-
-        fig5.update_layout(
-            width=800,
-            height=700,
-            title_x=0.4
+                """,
+            unsafe_allow_html=True,
         )
+        fig5 = px.scatter(
+            selected_data,
+            x="Fecha",
+            y="Malware",
+            color="Malware",
+            labels={"Fecha": "Fecha", "Malware": "Malware"},
+            title=f"🔻Malwares que conforman la Familia {familia_selected}🔻",
+        )
+
+        fig5.update_layout(width=800, height=700, title_x=0.4)
 
         # Mostrar la gráfica en Streamlit
         familias_familias = st.container()
@@ -339,8 +345,9 @@ class family_malware(HydraHeadApp):
         fig_peso = px.box(selected_data, y="Peso", labels={"y": "Peso"})
         fig_peso.update_layout(
             width=300,
-            height=450,)
-        
+            height=450,
+        )
+
         grafica_pie = tab3.container()
         with grafica_pie:
             col1_2.plotly_chart(fig7, config={"displaylogo": False})

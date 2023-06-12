@@ -84,10 +84,13 @@ class general_malware(HydraHeadApp):
         with title_analisis:
             col1, col2, col3 = st.columns([0.7, 9, 0.7])
             col4, col5, col6 = st.columns([2.2, 8, 2.2])
-            col2.markdown(f"""
+            col2.markdown(
+                f"""
                 <div style="text-align: center">
                 <h1>📙ANÁLISIS DE DATOS DEL {start_date} AL {end_date}📙
-            """,unsafe_allow_html=True)
+            """,
+                unsafe_allow_html=True,
+            )
             col2.markdown(
                 f"""
                 <div style="text-align: center">
@@ -358,17 +361,22 @@ class general_malware(HydraHeadApp):
         tabla_malwares = st.container()
         with tabla_malwares:
             col1, col2, col3 = st.columns([0.1, 4, 0.1])
-            col2.markdown(f"""
+            col2.markdown(
+                f"""
                 <div style="text-align: center">
                 <h1>⬇️📋TABLA DE REGISTROS DE DATOS DE MALWARE⬇️📋
-            """,unsafe_allow_html=True)
-            col2.markdown(f"""
+            """,
+                unsafe_allow_html=True,
+            )
+            col2.markdown(
+                f"""
                 <div style="text-align: center">
                 <h4>En la siguiente tabla, podrá observar el registro principal
                 de datos que Medalware utiliza para mostra la informacion. Este 
                 registro estará disponible proximamente para su descarga. 
-                """,unsafe_allow_html=True)
-
+                """,
+                unsafe_allow_html=True,
+            )
 
             col2.write(
                 filtered_data[
@@ -416,25 +424,30 @@ class general_malware(HydraHeadApp):
             bgcolor="rgba(0,0,0,0)",
         )
 
-        fig5.update_layout(width=800, height=600, title_x = 0.5)
+        fig5.update_layout(width=800, height=600, title_x=0.5)
 
         # Mostrar el gráfico en Streamlit
         st.divider()
         mapa_malwares = st.container()
         with mapa_malwares:
             col1, col2, col3 = st.columns([1, 8, 1])
-            col2.markdown(f"""
+            col2.markdown(
+                f"""
                 <div style="text-align: center">
-                <h1>🌎ESPECTRO MUNDIAL DE DATOS DE MALWARE🌎"""
-                ,unsafe_allow_html=True)
+                <h1>🌎ESPECTRO MUNDIAL DE DATOS DE MALWARE🌎""",
+                unsafe_allow_html=True,
+            )
 
-            col2.markdown(f"""
+            col2.markdown(
+                f"""
                 <div style="text-align: center">
                 <h4>Medalware es capaz de contabilizar la mayor afluencia 
                 de malware a nivel mundial, para determinar cual pais posee
                 mayor registro de afluencia de malwares, a traves del siguiente
                 gráfico:
-                """,unsafe_allow_html=True)
+                """,
+                unsafe_allow_html=True,
+            )
             col2.plotly_chart(
                 fig5, config={"displaylogo": False}, use_container_width=True
             )
