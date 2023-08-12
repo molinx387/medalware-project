@@ -18,10 +18,10 @@ class family_malware(HydraHeadApp):
             col1, col2 = st.columns([3, 7])
             col1.title("ANÁLISIS DE DATOS DE FAMILIAS DE MALWARE")
             col1.subheader(
-                "📌En este apartado se encuentra informacion relativa a los registros de familias de malware"
+                "📌En este apartado se encuentra información relativa a los registros de familias de malware"
             )
             options = data["Familia"].unique()
-            familia_selected = col1.selectbox("👇Selecciona tipo de familia👇", options)
+            familia_selected = col1.selectbox("👇Seleccionar una familia de malware👇", options)
 
             # num_familia = len(options)
 
@@ -41,10 +41,10 @@ class family_malware(HydraHeadApp):
 
         # Personalizar el diseño del gráfico de área
         fig1.update_layout(
-            title=f"Registros del familia {familia_selected}",
-            title_x=0.1,
+            title=f"REGISTROS DE LA FAMILIA DE MALWARE {familia_selected.upper()}",
+            title_x=0.0,
             xaxis_title="Fecha",
-            yaxis_title=" Numero de Ocurrencias",
+            yaxis_title=" Cantidad de Ocurrencias",
         )
 
         histograma_familia = col2.container()
@@ -92,7 +92,7 @@ class family_malware(HydraHeadApp):
             col1.markdown(
                 f"""
                 <div style="text-align: left">
-                <h4> ⬇️📑 Información analizada a partir de los datos de {familia_selected}
+                <h4> ⬇️📑 Información analizada de los {familia_selected}s
                 """,
                 unsafe_allow_html=True,
             )
@@ -102,7 +102,7 @@ class family_malware(HydraHeadApp):
                 [
                     "       📈Registros",
                     "       📂Malwares constitutivos",
-                    "       📊Caracteristicas",
+                    "       📊Características",
                     "       🌎Origen",
                 ]
             )
@@ -117,8 +117,8 @@ class family_malware(HydraHeadApp):
                     <div style="text-align: center">
                     <h4>🔰Medalware ha recopliado datos de {selected_data.shape[0]}
                     malwares pertenecientes a la familia {familia_selected}🔰
-                    <h4>🔸La constitucion numerica de esta familia abarca un {porcentajes.iloc[0].round(2)} % 
-                    del total con respecto a las otras familias recopiladas por la aplicacion🔸 
+                    <h4>🔸La constitución numérica de esta familia abarca un {porcentajes.iloc[0].round(2)} % 
+                    del total con respecto a las otras familias recopiladas por la aplicación🔸 
                 """,
                 unsafe_allow_html=True,
             )
@@ -146,9 +146,8 @@ class family_malware(HydraHeadApp):
             col3_2.markdown(
                 f"""
                         <div style="text-align: center">
-                        <h4>🟢 Un {familia_selected}
-                        se caracteriza por ingresar a los sistemas a traves de
-                        {selected_data["Metodo de Entrega"].value_counts().idxmax()}
+                        <h4>🟢La mayoria de los malwares de la familia {familia_selected}
+                        llegan a los sistemas a través de {selected_data["Metodo de Entrega"].value_counts().idxmax()}
                         """,
                 unsafe_allow_html=True,
             )
@@ -159,8 +158,8 @@ class family_malware(HydraHeadApp):
                 f"""
                             <div style="text-align: center">
                             <h4>📮Los datos recopilados a partir de los registros
-                            de un {familia_selected}, indican que esta familia de software malicioso
-                            ha visto mayor prescencia en  {selected_data["Origen"].value_counts().idxmax()}
+                            de la familia {familia_selected}, indican que esta se ha registrado mayor presencia 
+                            en {selected_data["Origen"].value_counts().idxmax()}
 
                             <h6> Nota: Medalware clasifica los paises tomando como referencia la normativa ISO 3166-1, alpha-3
                             """,
@@ -181,7 +180,6 @@ class family_malware(HydraHeadApp):
             color="cantidad",
             color_continuous_scale="portland",
             labels={"cantidad": "Cantidad"},
-            title="Distribución de Origen",
             projection="equirectangular",
         )
 
@@ -240,7 +238,7 @@ class family_malware(HydraHeadApp):
                 <h4>🔸Basado en los análisis de Medalware, 
                 la familia de malwares {familia_selected}
                 esta constituida por {(familia_counted)} malwares principales
-                <h5>🔸Estos malwares corresponden a: {selected_data["Malware"].unique()}
+                <h5>🔸Estos malwares corresponden a: {', '.join(selected_data["Malware"].unique())}
                 """,
             unsafe_allow_html=True,
         )
@@ -250,7 +248,7 @@ class family_malware(HydraHeadApp):
             y="Malware",
             color="Malware",
             labels={"Fecha": "Fecha", "Malware": "Malware"},
-            title=f"🔻Malwares que conforman la Familia {familia_selected}🔻",
+            title= " ",
         )
 
         fig5.update_layout(width=800, height=700, title_x=0.4)

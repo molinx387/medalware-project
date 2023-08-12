@@ -62,10 +62,10 @@ class general_malware(HydraHeadApp):
 
         # Personalizar el diseño del gráfico de área
         fig.update_layout(
-            title=f"Registro de Malware Analizados desde {start_date} hasta {end_date}",
-            title_x=0.1,
+            title="REGISTRO DE MALWARE ANALIZADOS POR MEDALWARE",
+            title_x=0.00,
             xaxis_title="Fecha",
-            yaxis_title="Numero de Malwares",
+            yaxis_title="Cantidad de Malwares",
         )
 
         # Mostrar el gráfico en Streamlit
@@ -129,7 +129,7 @@ class general_malware(HydraHeadApp):
         )
 
         fig1.update_layout(
-            title=f"Métodos de entrega más comunes",
+            title="MÉTODOS DE ENTREGA MÁS COMUNES",
             width=500,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -156,7 +156,7 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig2.update_layout(
-            title=f"Extensiones usadas por malware",
+            title="EXTENSIONES USADAS POR MALWARE",
             width=400,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -183,7 +183,7 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig3.update_layout(
-            title=f"Top malwares",
+            title="TOP MALWARES",
             width=450,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -210,7 +210,7 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig4.update_layout(
-            title=f"Top mayor registro de malware",
+            title="TOP MAYOR REGISTRO DE MALWARE",
             width=400,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -237,7 +237,7 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig6.update_layout(
-            title=f"Top Familas de malware",
+            title="TOP FAMILIAS DE MALWARE",
             width=450,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -264,7 +264,7 @@ class general_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=2)),
         )
         fig7.update_layout(
-            title=f"Top Sistema operativo",
+            title="TOP SISTEMA OPERATIVOS",
             width=500,
             height=400,
             margin=dict(l=10, r=10, t=30, b=10),
@@ -288,7 +288,7 @@ class general_malware(HydraHeadApp):
                     f"""
                 <h4>📙Hasta la fecha, los {filtered_data["Familia"].value_counts().idxmax()}s han sido 
                 la familia de malware más predominante, representando aproximadamente el 
-                {percentages(data_grouped_familia)}% del total de amenazas analizadas por medalware.
+                {percentages(data_grouped_familia)}% del total de amenazas analizadas por Medalware.
                 """,
                     unsafe_allow_html=True,
                 )
@@ -298,9 +298,9 @@ class general_malware(HydraHeadApp):
             with st.expander("📌"):
                 st.markdown(
                     f"""
-                <h4>📙El metodo de entrega más utilizado por los ciberdelincuentes es la
+                <h4>📙El método de entrega de malware más concurrente se lleva a cabo mediante la
                 {filtered_data["Metodo de Entrega"].value_counts().idxmax()}, con un 
-                {percentages(data_grouped_metodo_entrega)}% sobre otros metodos convencionales.
+                {percentages(data_grouped_metodo_entrega)}% sobre otros métodos convencionales.
                 """,
                     unsafe_allow_html=True,
                 )
@@ -336,8 +336,7 @@ class general_malware(HydraHeadApp):
             with st.expander("📌"):
                 st.markdown(
                     f"""
-                <h4>📙El tipo de archivo en que con el que mayor frecuencia se ocultan los malware 
-                son aquellos correspondientes a la extension 
+                <h4>📙El tipo de archivo con el que mayor frecuencia se ocultan los malware son aquellos correspondientes a la extensión  
                 ".{filtered_data["Extension"].value_counts().idxmax()}" representando un 
                 {percentages(data_grouped_extension)}% del conjunto de datos analizado por Medalware
                 """,
@@ -360,7 +359,7 @@ class general_malware(HydraHeadApp):
         st.divider()
         tabla_malwares = st.container()
         with tabla_malwares:
-            col1, col2, col3 = st.columns([0.1, 4, 0.1])
+            col1, col2, col3 = st.columns([0.1, 5, 0.1])
             col2.markdown(
                 f"""
                 <div style="text-align: center">
@@ -372,8 +371,7 @@ class general_malware(HydraHeadApp):
                 f"""
                 <div style="text-align: center">
                 <h4>En la siguiente tabla, podrá observar el registro principal
-                de datos que Medalware utiliza para mostra la informacion. Este 
-                registro estará disponible proximamente para su descarga. 
+                de datos que Medalware utiliza para mostrar la información. 
                 """,
                 unsafe_allow_html=True,
             )
@@ -410,7 +408,7 @@ class general_malware(HydraHeadApp):
             color="cantidad",
             color_continuous_scale="portland",
             labels={"cantidad": "Cantidad"},
-            title="Paises con mayor cantidad de Malware",
+            title=" ",
             projection="orthographic",
         )
 
@@ -430,21 +428,19 @@ class general_malware(HydraHeadApp):
         st.divider()
         mapa_malwares = st.container()
         with mapa_malwares:
-            col1, col2, col3 = st.columns([1, 8, 1])
+            col1, col2, col3 = st.columns([1, 9, 1])
             col2.markdown(
                 f"""
                 <div style="text-align: center">
                 <h1>🌎ESPECTRO MUNDIAL DE DATOS DE MALWARE🌎""",
                 unsafe_allow_html=True,
             )
-
             col2.markdown(
                 f"""
                 <div style="text-align: center">
-                <h4>Medalware es capaz de contabilizar la mayor afluencia 
-                de malware a nivel mundial, para determinar cual pais posee
-                mayor registro de afluencia de malwares, a traves del siguiente
-                gráfico:
+                <h4>Medalware es capaz de contabilizar la mayor afluencia de malware a nivel mundial, 
+                para determinar cuál país posee mayor registro de malwares, 
+                a través del siguiente gráfico:
                 """,
                 unsafe_allow_html=True,
             )

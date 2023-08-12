@@ -13,13 +13,13 @@ class delivery_malware(HydraHeadApp):
         title = st.container()
         with title:
             col1, col2 = st.columns([5, 6])
-            col1.title("ANALISIS DE METODOS DE ENTREGA DE MALWARE")
+            col1.title("ANÁLISIS DE MÉTODOS DE ENTREGA DE MALWARE")
             col1.subheader(
-                "📌En este apartado se encuentra informacion sobre la forma en la que el malware llega a un sistema o usuario"
+                "📌En este apartado se encuentra información sobre las formas en la que el malware llega a los sistemas"
             )
             options = data["Familia"].unique()
             options = data["Metodo de Entrega"].unique()
-            entraga_selected = col1.selectbox("👇Selecciona Metodo de Entrega👇", options)
+            entraga_selected = col1.selectbox("👇Selecciona un Método de Entrega👇", options)
             selected_data_metodo = data[data["Metodo de Entrega"] == entraga_selected]
             colt1, colt2, colt3 = st.columns([6, 6, 6])
             col1.title(f"📥{entraga_selected.title()}📥")
@@ -49,9 +49,9 @@ class delivery_malware(HydraHeadApp):
             marker=dict(colors=colors, line=dict(color=colors, width=1)),
         )
         fig1.update_layout(
-            width=700,
-            height=600,
-            margin=dict(l=140, r=0, t=0, b=130),
+            width=600,
+            height=500,
+            margin=dict(l=80, r=0, t=0, b=130),
         )
         fig1.update(layout_showlegend=False)
 
@@ -63,7 +63,7 @@ class delivery_malware(HydraHeadApp):
         with tabla_descarga_wed:
             col1, col2, col3 = st.columns([0.1, 5, 0.1])
             col2.subheader(
-                f"📋⬇️Registro de de datos de malwares que fueron recibidos mediante {entraga_selected}📋⬇️"
+                f"📋⬇️Registro de datos de malwares que fueron registrados mediante {entraga_selected}📋⬇️"
             )
             col2.write(
                 selected_data_metodo[
@@ -84,12 +84,13 @@ class delivery_malware(HydraHeadApp):
         data_malware = selected_data_metodo["Malware"].value_counts()
         fig2 = px.bar(data_malware, x=data_malware.index, y=data_malware.values)
         fig2.update_layout(
-            title=f"🔻Malwares recibidos a traves de {entraga_selected}🔻",
+            title=f" ",
             title_x=0.4,
             xaxis_title="Malware",
             yaxis_title="Cantidad",
         )
-
+        
+        st.subheader(f"🔻Gráfico de malwares registrados empleando la  {entraga_selected} como método de entrega🔻")
         # Mostrar la gráfica en Streamlit
         familias_familias = st.container()
         with familias_familias:
@@ -103,11 +104,12 @@ class delivery_malware(HydraHeadApp):
         data_malware = selected_data_metodo["Familia"].value_counts()
         fig = px.bar(data_malware, x=data_malware.index, y=data_malware.values)
         fig.update_layout(
-            title=f"🔻Familias de malware que emplearon {entraga_selected} para llegar a los sitemas-usuarios🔻",
+            title=f" ",
             title_x=0.2,
             xaxis_title="Malware",
             yaxis_title="Cantidad",
         )
+        st.subheader(f"🔻Familias de malware que emplearon {entraga_selected} para llegar a los sistemas-usuarios🔻")
 
         # Mostrar la gráfica en Streamlit
         familias_familias = st.container()
@@ -133,7 +135,7 @@ class delivery_malware(HydraHeadApp):
             locations="iso_alpha",
             locationmode="ISO-3",
             color="cantidad",
-            title=f"🔻Paises en donde la {entraga_selected} es el método de entrega de malware mas comun🔻",
+            title=f" ",
             color_continuous_scale="portland",
             labels={"cantidad": "Cantidad"},
             projection="equirectangular",
@@ -150,7 +152,7 @@ class delivery_malware(HydraHeadApp):
         )
 
         fig5.update_layout(width=550, height=500)
-
+        st.subheader(f"🔻Paises en donde la {entraga_selected} es el método de entrega de malware más común🔻")
         mapa_malwares = st.container()
         with mapa_malwares:
             st.plotly_chart(

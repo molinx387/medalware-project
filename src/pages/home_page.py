@@ -31,7 +31,7 @@ class home_malware(HydraHeadApp):
                 provenientes del sitio <a href="https://bazaar.abuse.ch/">MalwareBaazar</a>, 
                 para extraer de ellos información relevante. A través de distintos gráficos y análisis. 
                 Con Medalware, se puede llevar un seguimiento de las tendencias de las amenazas de software
-                a nivel mundial, sin limitacion alguna.
+                a nivel mundial, sin limitación alguna.
             </div>
             """,
                 unsafe_allow_html=True,
@@ -44,7 +44,7 @@ class home_malware(HydraHeadApp):
             col2.markdown(
                 """
             <div style="text-align: justify">
-            Los datos estudiados por MEDALWARE corresponden a caracteristicas de muestras de malwares
+            Los datos estudiados por MEDALWARE corresponden a características de muestras de malwares
             presentes en los registros de <a href="https://bazaar.abuse.ch/">MalwareBaazar</a>. Estos 
             datos pasan por un proceso de "limpieza" para luego ser almacenados en un archivo de extension
             ".csv" que se actualiza diariamente. Las columnas que conforman el archivo CSV, corresponden a los 
@@ -67,7 +67,7 @@ class home_malware(HydraHeadApp):
             with col2.expander("**👾  MALWARE**", expanded=False):
                 st.markdown(
                     f"""                <div style="text-align: justify">
-                <h6>Malware es cualquier tipo de software malicioso diseñado para infiltrarse en los sistemas operativos de los dispositivo y realizar acciones sin el conocimiento del usuario.
+                <h6>Malware es cualquier tipo de software malicioso diseñado para infiltrarse en los sistemas operativos de los dispositivos y realizar acciones sin el conocimiento del usuario.
 
                 """,
                     unsafe_allow_html=True,
@@ -118,7 +118,7 @@ class home_malware(HydraHeadApp):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
-                <h6>El origen refiere al pais de donde provino la muestra de malware.
+                <h6>El origen refiere al país de donde provino la muestra de malware.
                 """,
                     unsafe_allow_html=True,
                 )
@@ -126,7 +126,7 @@ class home_malware(HydraHeadApp):
                 st.markdown(
                     f"""
                 <div style="text-align: justify">
-                <h6>El origen refiere al pais de donde provino la muestra de malware.
+                <h6>Fecha de registro del malware.
                 """,
                     unsafe_allow_html=True,
                 )
